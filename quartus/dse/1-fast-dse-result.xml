@@ -1,0 +1,76 @@
+
+<RESULTS project="gameoflife" revname="__dse_temp_rev" isbest="0" arcname="" wasCompiled="1">
+ <COPYRIGHT>Copyright (C) 2002 Altera Corporation. All rights reserved.
+                This information and code is highly confidential and proprietary
+                information and code of Altera and is being provided in accordance
+                with and subject to the protections of a non-disclosure agreement
+                which governs its use and disclosure.  Altera products and services
+                are protected under numerous U.S. and foreign patents, maskwork rights
+                copyrights and other intellectual property laws.  Altera assumes no
+                responsibility or liability arising out of the application or use
+                of this information and code. This notice must be retained and
+                reprinted on any copies of this information and code that are
+                permitted to be made.</COPYRIGHT>
+ <SETTING name="PLACEMENT_EFFORT_MULTIPLIER">3.0</SETTING>
+ <SETTING name="PHYSICAL_SYNTHESIS_REGISTER_RETIMING">ON</SETTING>
+ <SETTING name="ROUTER_TIMING_OPTIMIZATION_LEVEL">MAXIMUM</SETTING>
+ <SETTING name="PHYSICAL_SYNTHESIS_REGISTER_DUPLICATION">ON</SETTING>
+ <SETTING name="PHYSICAL_SYNTHESIS_COMBO_LOGIC">ON</SETTING>
+ <SETTING name="FITTER_EFFORT">STANDARD FIT</SETTING>
+ <SETTING name="PHYSICAL_SYNTHESIS_EFFORT">EXTRA</SETTING>
+ <SETTING name="AUTO_PACKED_REGISTERS_STRATIXII">NORMAL</SETTING>
+ <RESULT name="I/O Thermal Power Dissipation">unknown</RESULT>
+ <RESULT name="Quality of Fit">0.4103625</RESULT>
+ <RESULT name="I/O pins">116</RESULT>
+ <RESULT name="Elapsed Time: Total">00:04:54</RESULT>
+ <RESULT name="Elapsed Time: Assembler">00:00:13</RESULT>
+ <RESULT name="Clock Setup: 'pll1:inst1|altpll:altpll_component|_clk0': Slack">5.458 ns</RESULT>
+ <RESULT name="Worst-case Slack">0.215 ns (Clock Hold: 'pll1:inst1|altpll:altpll_component|_clk0')</RESULT>
+ <RESULT name="All Clock Hold Failing Paths">0</RESULT>
+ <RESULT name="All Clock Recovery Failing Paths">0</RESULT>
+ <RESULT name="All Clock Setup Failing Paths">0</RESULT>
+ <RESULT name="Worst-case tco: Actual Time">3.702 ns</RESULT>
+ <RESULT name="Worst-case tsu: Failed Paths">0</RESULT>
+ <RESULT name="Worst-case Minimum tco: Actual Time">2.275 ns</RESULT>
+ <RESULT name="Elapsed Time: Fitter">00:02:48</RESULT>
+ <RESULT name="Worst-case tsu: Actual Time">6.557 ns</RESULT>
+ <RESULT name="M4Ks">52</RESULT>
+ <RESULT name="M512s">unknown</RESULT>
+ <RESULT name="Average Slack for Failing Paths">0</RESULT>
+ <RESULT name="Worst-case th: Failed Paths">0</RESULT>
+ <RESULT name="Worst-case tsu: Slack">unknown</RESULT>
+ <RESULT name="Worst-case tco: Failed Paths">0</RESULT>
+ <RESULT name="Worst-case th: Actual Time">-4.003 ns</RESULT>
+ <RESULT name="Elapsed Time: Classic Timing Analyzer">00:00:04</RESULT>
+ <RESULT name="Logic cells">1215</RESULT>
+ <RESULT name="Worst-case th: Slack">unknown</RESULT>
+ <RESULT name="M-RAMs">unknown</RESULT>
+ <RESULT name="Maximum fan-out node">pll1:inst1|altpll:altpll_component|_clk0</RESULT>
+ <RESULT name="Timing Model">Fast</RESULT>
+ <RESULT name="Clock Setup: 'pll1:inst1|altpll:altpll_component|_clk0': Actual Time">4.254 ns</RESULT>
+ <RESULT name="Elapsed Time: Analysis &amp;amp; Synthesis">00:00:17</RESULT>
+ <RESULT name="Embedded Multiplier 9-bit elements">0</RESULT>
+ <RESULT name="Average fan-out">3.58</RESULT>
+ <RESULT name="All Clock Removal Failing Paths">0</RESULT>
+ <RESULT name="Total fan-out">6509</RESULT>
+ <RESULT name="Total memory bits">208896</RESULT>
+ <RESULT name="Power Estimation Confidence">unknown</RESULT>
+ <RESULT name="Registers">unknown</RESULT>
+ <RESULT name="Clock Setup: 'pll1:inst1|altpll:altpll_component|_clk0': Failed Paths">0</RESULT>
+ <RESULT name="Worst-case tco: Slack">unknown</RESULT>
+ <RESULT name="Core Dynamic Thermal Power Dissipation">unknown</RESULT>
+ <RESULT name="Worst-case Minimum tco: Slack">unknown</RESULT>
+ <RESULT name="Clock Hold: 'pll1:inst1|altpll:altpll_component|_clk0': Failed Paths">0</RESULT>
+ <RESULT name="All Failing Paths">0</RESULT>
+ <RESULT name="Total Thermal Power Dissipation">unknown</RESULT>
+ <RESULT name="Clock Hold: 'pll1:inst1|altpll:altpll_component|_clk0': Actual Time">unknown</RESULT>
+ <RESULT name="Maximum fan-out">491</RESULT>
+ <RESULT name="Worst-case Minimum tco: Failed Paths">0</RESULT>
+ <RESULT name="Clock Period: Geometric Mean">4.25 ns</RESULT>
+ <RESULT name="Total RAM block bits">239616</RESULT>
+ <RESULT name="Core Static Thermal Power Dissipation">unknown</RESULT>
+ <RESULT name="Elapsed Time: Design Assistant">00:00:02</RESULT>
+ <RESULT name="PLLs">1</RESULT>
+ <RESULT name="Clock Hold: 'pll1:inst1|altpll:altpll_component|_clk0': Slack">0.215 ns</RESULT>
+</RESULTS>
+

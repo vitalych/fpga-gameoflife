@@ -1,0 +1,807 @@
+m255
+13
+cModel Technology
+dD:\Vitaly\programmation\fpga\vga
+Efile_downloader
+w1180286550
+DP work uart_lib 2Y4`VP>7YH0DEjAz>TC^k3
+DP ieee numeric_std UJ3[eJ:lANeDSH1LT5b980
+DP ieee std_logic_1164 ChagfbCXBFdaC62b9Y:;<1
+dD:\Vitaly\programmation\fpga\gameoflife_sdram
+Fd:/Vitaly/programmation/fpga/gameoflife/uart/file_downloader.vhd
+l0
+L23
+V`gBEenGLB?KSSVYcc6MMo1
+OV;C;6.1g;31
+32
+o-work work -2002 -explicit -O0
+tExplicit 1 GenerateLoopIterationMax 100000
+Aa1
+DP work uart_lib 2Y4`VP>7YH0DEjAz>TC^k3
+DP ieee numeric_std UJ3[eJ:lANeDSH1LT5b980
+DP ieee std_logic_1164 ChagfbCXBFdaC62b9Y:;<1
+DE work file_downloader `gBEenGLB?KSSVYcc6MMo1
+l68
+L54
+V>Q7D[m3:CjU2=gRIX><?[1
+OV;C;6.1g;31
+32
+M3 ieee std_logic_1164
+M2 ieee numeric_std
+M1 work uart_lib
+o-work work -2002 -explicit -O0
+tExplicit 1 GenerateLoopIterationMax 100000
+Pfunctions
+DP ieee std_logic_1164 ChagfbCXBFdaC62b9Y:;<1
+w1181046633
+dD:\Vitaly\programmation\fpga\gameoflife_sdram
+Fd:/Vitaly/programmation/fpga/gameoflife/functions.vhd
+l0
+L10
+VBWmf`>C5ZbXY[R7`o]:Ho3
+OV;C;6.1g;31
+32
+b1
+M1 ieee std_logic_1164
+o-work work -2002 -explicit -O0
+tExplicit 1 GenerateLoopIterationMax 100000
+Bbody
+DB work functions BWmf`>C5ZbXY[R7`o]:Ho3
+DP ieee std_logic_1164 ChagfbCXBFdaC62b9Y:;<1
+l0
+L10
+VXG_m5n:WVTkX?gScQJ;zN2
+OV;C;6.1g;31
+32
+M1 ieee std_logic_1164
+o-work work -2002 -explicit -O0
+tExplicit 1 GenerateLoopIterationMax 100000
+nbody
+Egfx_bouncer
+w1180299809
+DP work functions BWmf`>C5ZbXY[R7`o]:Ho3
+DP ieee numeric_std UJ3[eJ:lANeDSH1LT5b980
+DP ieee std_logic_1164 ChagfbCXBFdaC62b9Y:;<1
+dD:\Vitaly\programmation\fpga\gameoflife_sdram
+Fd:/Vitaly/programmation/fpga/gameoflife/gfx_bouncer.vhd
+l0
+L19
+V_MbLBVFUm3GPdlj<[3V_D3
+OV;C;6.1g;31
+32
+o-work work -2002 -explicit -O0
+tExplicit 1 GenerateLoopIterationMax 100000
+Aa1
+DP work functions BWmf`>C5ZbXY[R7`o]:Ho3
+DP ieee numeric_std UJ3[eJ:lANeDSH1LT5b980
+DP ieee std_logic_1164 ChagfbCXBFdaC62b9Y:;<1
+DE work gfx_bouncer _MbLBVFUm3GPdlj<[3V_D3
+l85
+L55
+VK_OZamoIQlUezIE9ZAmLj2
+OV;C;6.1g;31
+32
+M3 ieee std_logic_1164
+M2 ieee numeric_std
+M1 work functions
+o-work work -2002 -explicit -O0
+tExplicit 1 GenerateLoopIterationMax 100000
+Egol2
+w1180291345
+DP work uart_lib 2Y4`VP>7YH0DEjAz>TC^k3
+DP work ram_lib DY5P<ZQa=l5aim9cXYBL=3
+DP work vga_lib PNnUSL7hSn7zNSIkWUz[@0
+DP work functions BWmf`>C5ZbXY[R7`o]:Ho3
+DP work gol2_lib <7eIbaWNO:6>lYLRc@XIF3
+DP ieee numeric_std UJ3[eJ:lANeDSH1LT5b980
+DP ieee std_logic_1164 ChagfbCXBFdaC62b9Y:;<1
+dD:\Vitaly\programmation\fpga\gameoflife_sdram
+Fd:/Vitaly/programmation/fpga/gameoflife/gol2.vhd
+l0
+L17
+V2;47o]XO12TYU6`<UWA_j3
+OV;C;6.1g;31
+32
+o-work work -2002 -explicit -O0
+tExplicit 1 GenerateLoopIterationMax 100000
+Aa1
+DP work uart_lib 2Y4`VP>7YH0DEjAz>TC^k3
+DP work ram_lib DY5P<ZQa=l5aim9cXYBL=3
+DP work vga_lib PNnUSL7hSn7zNSIkWUz[@0
+DP work functions BWmf`>C5ZbXY[R7`o]:Ho3
+DP work gol2_lib <7eIbaWNO:6>lYLRc@XIF3
+DP ieee numeric_std UJ3[eJ:lANeDSH1LT5b980
+DP ieee std_logic_1164 ChagfbCXBFdaC62b9Y:;<1
+DE work gol2 2;47o]XO12TYU6`<UWA_j3
+l158
+L62
+V?g5NGVlchJV==hg<bMM9]0
+OV;C;6.1g;31
+32
+M7 ieee std_logic_1164
+M6 ieee numeric_std
+M5 work gol2_lib
+M4 work functions
+M3 work vga_lib
+M2 work ram_lib
+M1 work uart_lib
+o-work work -2002 -explicit -O0
+tExplicit 1 GenerateLoopIterationMax 100000
+Egol2_computegrid
+w1180283426
+DP work functions BWmf`>C5ZbXY[R7`o]:Ho3
+DP work gol2_lib <7eIbaWNO:6>lYLRc@XIF3
+DP ieee numeric_std UJ3[eJ:lANeDSH1LT5b980
+DP ieee std_logic_1164 ChagfbCXBFdaC62b9Y:;<1
+dD:\Vitaly\programmation\fpga\gameoflife_sdram
+Fd:/Vitaly/programmation/fpga/gameoflife/gol2_computegrid.vhd
+l0
+L20
+VSKTAzR:SJUk9dN5oN8ab>3
+OV;C;6.1g;31
+32
+o-work work -2002 -explicit -O0
+tExplicit 1 GenerateLoopIterationMax 100000
+Aa1
+DP work functions BWmf`>C5ZbXY[R7`o]:Ho3
+DP work gol2_lib <7eIbaWNO:6>lYLRc@XIF3
+DP ieee numeric_std UJ3[eJ:lANeDSH1LT5b980
+DP ieee std_logic_1164 ChagfbCXBFdaC62b9Y:;<1
+DE work gol2_computegrid SKTAzR:SJUk9dN5oN8ab>3
+l75
+L60
+V2YQ6gUo^aINbDcOM=izF30
+OV;C;6.1g;31
+32
+M4 ieee std_logic_1164
+M3 ieee numeric_std
+M2 work gol2_lib
+M1 work functions
+o-work work -2002 -explicit -O0
+tExplicit 1 GenerateLoopIterationMax 100000
+Egol2_computeline
+w1180282889
+DP work functions BWmf`>C5ZbXY[R7`o]:Ho3
+DP work gol2_lib <7eIbaWNO:6>lYLRc@XIF3
+DP ieee numeric_std UJ3[eJ:lANeDSH1LT5b980
+DP ieee std_logic_1164 ChagfbCXBFdaC62b9Y:;<1
+dD:\Vitaly\programmation\fpga\gameoflife_sdram
+Fd:/Vitaly/programmation/fpga/gameoflife/gol2_computeline.vhd
+l0
+L41
+VhlKD26`aW<c02nQF4lcV43
+OV;C;6.1g;31
+32
+o-work work -2002 -explicit -O0
+tExplicit 1 GenerateLoopIterationMax 100000
+Aa0
+DP work functions BWmf`>C5ZbXY[R7`o]:Ho3
+DP work gol2_lib <7eIbaWNO:6>lYLRc@XIF3
+DP ieee numeric_std UJ3[eJ:lANeDSH1LT5b980
+DP ieee std_logic_1164 ChagfbCXBFdaC62b9Y:;<1
+DE work gol2_computeline hlKD26`aW<c02nQF4lcV43
+l111
+L80
+VUd15U_IoY0SHCHl7=>;YX0
+OV;C;6.1g;31
+32
+M4 ieee std_logic_1164
+M3 ieee numeric_std
+M2 work gol2_lib
+M1 work functions
+o-work work -2002 -explicit -O0
+tExplicit 1 GenerateLoopIterationMax 100000
+Egol2_grid
+w1180285486
+DP work gol2_lib <7eIbaWNO:6>lYLRc@XIF3
+DP work functions BWmf`>C5ZbXY[R7`o]:Ho3
+DP ieee numeric_std UJ3[eJ:lANeDSH1LT5b980
+DP ieee std_logic_1164 ChagfbCXBFdaC62b9Y:;<1
+dD:\Vitaly\programmation\fpga\gameoflife_sdram
+Fd:/Vitaly/programmation/fpga/gameoflife/gol2_grid.vhd
+l0
+L16
+V?f8bo::0IRjcFW_S>JBEd3
+OV;C;6.1g;31
+32
+o-work work -2002 -explicit -O0
+tExplicit 1 GenerateLoopIterationMax 100000
+Aa1
+DP work gol2_lib <7eIbaWNO:6>lYLRc@XIF3
+DP work functions BWmf`>C5ZbXY[R7`o]:Ho3
+DP ieee numeric_std UJ3[eJ:lANeDSH1LT5b980
+DP ieee std_logic_1164 ChagfbCXBFdaC62b9Y:;<1
+DE work gol2_grid ?f8bo::0IRjcFW_S>JBEd3
+l71
+L58
+VPJ8ElZnV787`dZbGc>cY]0
+OV;C;6.1g;31
+32
+M4 ieee std_logic_1164
+M3 ieee numeric_std
+M2 work functions
+M1 work gol2_lib
+o-work work -2002 -explicit -O0
+tExplicit 1 GenerateLoopIterationMax 100000
+Pgol2_lib
+DP work functions BWmf`>C5ZbXY[R7`o]:Ho3
+DP ieee numeric_std UJ3[eJ:lANeDSH1LT5b980
+DP ieee std_logic_1164 ChagfbCXBFdaC62b9Y:;<1
+w1180197973
+dD:\Vitaly\programmation\fpga\gameoflife_sdram
+Fd:/Vitaly/programmation/fpga/gameoflife/gol2_lib.vhd
+l0
+L6
+V<7eIbaWNO:6>lYLRc@XIF3
+OV;C;6.1g;31
+32
+M3 ieee std_logic_1164
+M2 ieee numeric_std
+M1 work functions
+o-work work -2002 -explicit -O0
+tExplicit 1 GenerateLoopIterationMax 100000
+Egol2_m3counter
+w1180283967
+DP work functions BWmf`>C5ZbXY[R7`o]:Ho3
+DP work gol2_lib <7eIbaWNO:6>lYLRc@XIF3
+DP ieee numeric_std UJ3[eJ:lANeDSH1LT5b980
+DP ieee std_logic_1164 ChagfbCXBFdaC62b9Y:;<1
+dD:\Vitaly\programmation\fpga\gameoflife_sdram
+Fd:/Vitaly/programmation/fpga/gameoflife/gol2_m3counter.vhd
+l0
+L18
+VjEJiWR<aD3K:KU@QKhKh82
+OV;C;6.1g;31
+32
+o-work work -2002 -explicit -O0
+tExplicit 1 GenerateLoopIterationMax 100000
+Aa1
+DP work functions BWmf`>C5ZbXY[R7`o]:Ho3
+DP work gol2_lib <7eIbaWNO:6>lYLRc@XIF3
+DP ieee numeric_std UJ3[eJ:lANeDSH1LT5b980
+DP ieee std_logic_1164 ChagfbCXBFdaC62b9Y:;<1
+DE work gol2_m3counter jEJiWR<aD3K:KU@QKhKh82
+l37
+L33
+V[R9AaHYz>:i>zaFAoXiT]1
+OV;C;6.1g;31
+32
+M4 ieee std_logic_1164
+M3 ieee numeric_std
+M2 work gol2_lib
+M1 work functions
+o-work work -2002 -explicit -O0
+tExplicit 1 GenerateLoopIterationMax 100000
+Egol2_ram
+w1178717240
+DP ieee std_logic_1164 ChagfbCXBFdaC62b9Y:;<1
+dD:\Vitaly\programmation\fpga\gameoflife_sdram
+Fd:/Vitaly/programmation/fpga/gameoflife/gol2_ram.vhd
+l0
+L42
+Vo86j]NP4RlJN<`9hbl3<Z2
+OV;C;6.1g;31
+32
+o-work work -2002 -explicit -O0
+tExplicit 1 GenerateLoopIterationMax 100000
+Asyn
+DP ieee std_logic_1164 ChagfbCXBFdaC62b9Y:;<1
+DE work gol2_ram o86j]NP4RlJN<`9hbl3<Z2
+l86
+L54
+VJcjYfI7innbgU?3oE`DQP2
+OV;C;6.1g;31
+32
+M1 ieee std_logic_1164
+o-work work -2002 -explicit -O0
+tExplicit 1 GenerateLoopIterationMax 100000
+Emult1
+w1180272125
+DP ieee std_logic_1164 ChagfbCXBFdaC62b9Y:;<1
+dD:\Vitaly\programmation\fpga\gameoflife_sdram
+Fd:/Vitaly/programmation/fpga/gameoflife/mult1.vhd
+l0
+L14
+VohUX1]5h<U<AzN4S7MBjm0
+OV;C;6.1g;31
+32
+o-work work -2002 -explicit -O0
+tExplicit 1 GenerateLoopIterationMax 100000
+Asyn
+DP ieee std_logic_1164 ChagfbCXBFdaC62b9Y:;<1
+DE work mult1 ohUX1]5h<U<AzN4S7MBjm0
+l44
+L24
+Vb2fbe`=8a0[YOh;Mc`mef2
+OV;C;6.1g;31
+32
+M1 ieee std_logic_1164
+o-work work -2002 -explicit -O0
+tExplicit 1 GenerateLoopIterationMax 100000
+Epll1
+w1180301482
+DP ieee std_logic_1164 ChagfbCXBFdaC62b9Y:;<1
+dD:\Vitaly\programmation\fpga\gameoflife_sdram
+Fd:/Vitaly/programmation/fpga/gameoflife/pll1.vhd
+l0
+L42
+Vbz]18So^bl0RW;8FTnLIh2
+OV;C;6.1g;31
+32
+o-work work -2002 -explicit -O0
+tExplicit 1 GenerateLoopIterationMax 100000
+Asyn
+DP ieee std_logic_1164 ChagfbCXBFdaC62b9Y:;<1
+DE work pll1 bz]18So^bl0RW;8FTnLIh2
+l121
+L51
+V`QO?jaoUJ0P1Ji7ioSfgc1
+OV;C;6.1g;31
+32
+M1 ieee std_logic_1164
+o-work work -2002 -explicit -O0
+tExplicit 1 GenerateLoopIterationMax 100000
+Eram
+w1180272302
+DP ieee numeric_std UJ3[eJ:lANeDSH1LT5b980
+DP ieee std_logic_1164 ChagfbCXBFdaC62b9Y:;<1
+dD:\Vitaly\programmation\fpga\gameoflife_sdram
+Fd:/Vitaly/programmation/fpga/gameoflife/ram.vhd
+l0
+L14
+VWYVkW_64>K`E8lU>O;SBA2
+OV;C;6.1g;31
+32
+o-work work -2002 -explicit -O0
+tExplicit 1 GenerateLoopIterationMax 100000
+Aram0
+DP ieee numeric_std UJ3[eJ:lANeDSH1LT5b980
+DP ieee std_logic_1164 ChagfbCXBFdaC62b9Y:;<1
+DE work ram WYVkW_64>K`E8lU>O;SBA2
+l60
+L29
+Vlg7ZEljQnZ2nk<aND:<gc0
+OV;C;6.1g;31
+32
+M2 ieee std_logic_1164
+M1 ieee numeric_std
+o-work work -2002 -explicit -O0
+tExplicit 1 GenerateLoopIterationMax 100000
+Eram2port
+w1180272139
+DP ieee numeric_std UJ3[eJ:lANeDSH1LT5b980
+DP ieee std_logic_1164 ChagfbCXBFdaC62b9Y:;<1
+dD:\Vitaly\programmation\fpga\gameoflife_sdram
+Fd:/Vitaly/programmation/fpga/gameoflife/ram2port.vhd
+l0
+L14
+V6>f^O]H?ffhHD2Qzz1Ac73
+OV;C;6.1g;31
+32
+o-work work -2002 -explicit -O0
+tExplicit 1 GenerateLoopIterationMax 100000
+Asyn
+DP ieee numeric_std UJ3[eJ:lANeDSH1LT5b980
+DP ieee std_logic_1164 ChagfbCXBFdaC62b9Y:;<1
+DE work ram2port 6>f^O]H?ffhHD2Qzz1Ac73
+l80
+L37
+VaSEGkXI?bS]cYDm1d5JHK2
+OV;C;6.1g;31
+32
+M2 ieee std_logic_1164
+M1 ieee numeric_std
+o-work work -2002 -explicit -O0
+tExplicit 1 GenerateLoopIterationMax 100000
+Eram_grid
+w1180272469
+DP work functions BWmf`>C5ZbXY[R7`o]:Ho3
+DP ieee numeric_std UJ3[eJ:lANeDSH1LT5b980
+DP ieee std_logic_1164 ChagfbCXBFdaC62b9Y:;<1
+dD:\Vitaly\programmation\fpga\gameoflife_sdram
+Fd:/Vitaly/programmation/fpga/gameoflife/ram_grid.vhd
+l0
+L21
+Vj1^=iQN^1ZDXXcV790^G50
+OV;C;6.1g;31
+32
+o-work work -2002 -explicit -O0
+tExplicit 1 GenerateLoopIterationMax 100000
+Aa1
+DP work functions BWmf`>C5ZbXY[R7`o]:Ho3
+DP ieee numeric_std UJ3[eJ:lANeDSH1LT5b980
+DP ieee std_logic_1164 ChagfbCXBFdaC62b9Y:;<1
+DE work ram_grid j1^=iQN^1ZDXXcV790^G50
+l64
+L49
+VSn79cXJ4c8Ma^EB[d]0@n2
+OV;C;6.1g;31
+32
+M3 ieee std_logic_1164
+M2 ieee numeric_std
+M1 work functions
+o-work work -2002 -explicit -O0
+tExplicit 1 GenerateLoopIterationMax 100000
+Eram_grid_doublebuf
+w1180272861
+DP work functions BWmf`>C5ZbXY[R7`o]:Ho3
+DP work gol2_lib <7eIbaWNO:6>lYLRc@XIF3
+DP ieee numeric_std UJ3[eJ:lANeDSH1LT5b980
+DP ieee std_logic_1164 ChagfbCXBFdaC62b9Y:;<1
+dD:\Vitaly\programmation\fpga\gameoflife_sdram
+Fd:/Vitaly/programmation/fpga/gameoflife/ram_grid_doublebuf.vhd
+l0
+L29
+Vh0R8R5gZ1X?I:BXn^S3;k1
+OV;C;6.1g;31
+32
+o-work work -2002 -explicit -O0
+tExplicit 1 GenerateLoopIterationMax 100000
+Aa1
+DP work functions BWmf`>C5ZbXY[R7`o]:Ho3
+DP work gol2_lib <7eIbaWNO:6>lYLRc@XIF3
+DP ieee numeric_std UJ3[eJ:lANeDSH1LT5b980
+DP ieee std_logic_1164 ChagfbCXBFdaC62b9Y:;<1
+DE work ram_grid_doublebuf h0R8R5gZ1X?I:BXn^S3;k1
+l89
+L75
+VP>6L@lL<TX8iZG@01@SBC2
+OV;C;6.1g;31
+32
+M4 ieee std_logic_1164
+M3 ieee numeric_std
+M2 work gol2_lib
+M1 work functions
+o-work work -2002 -explicit -O0
+tExplicit 1 GenerateLoopIterationMax 100000
+Pram_lib
+DP work functions BWmf`>C5ZbXY[R7`o]:Ho3
+DP ieee numeric_std UJ3[eJ:lANeDSH1LT5b980
+DP ieee std_logic_1164 ChagfbCXBFdaC62b9Y:;<1
+w1180105825
+dD:\Vitaly\programmation\fpga\gameoflife_sdram
+Fd:/Vitaly/programmation/fpga/gameoflife/ram_lib.vhd
+l0
+L6
+VDY5P<ZQa=l5aim9cXYBL=3
+OV;C;6.1g;31
+32
+M3 ieee std_logic_1164
+M2 ieee numeric_std
+M1 work functions
+o-work work -2002 -explicit -O0
+tExplicit 1 GenerateLoopIterationMax 100000
+Esdram
+w1181593342
+DP work functions BWmf`>C5ZbXY[R7`o]:Ho3
+DP work sdram_lib mhW^VS]zQNP29Qnh6CY`i2
+DP ieee numeric_std UJ3[eJ:lANeDSH1LT5b980
+DP ieee std_logic_1164 ChagfbCXBFdaC62b9Y:;<1
+dD:\Vitaly\programmation\fpga\gameoflife_sdram
+Fd:/Vitaly/programmation/fpga/gameoflife_sdram/sdram.vhd
+l0
+L7
+V74HkDedmSRKPGXZ^HSMoY3
+OV;C;6.1g;31
+32
+o-work work -2002 -explicit -O0
+tExplicit 1 GenerateLoopIterationMax 100000
+Aa1
+DP work functions BWmf`>C5ZbXY[R7`o]:Ho3
+DP work sdram_lib mhW^VS]zQNP29Qnh6CY`i2
+DP ieee numeric_std UJ3[eJ:lANeDSH1LT5b980
+DP ieee std_logic_1164 ChagfbCXBFdaC62b9Y:;<1
+DE work sdram 74HkDedmSRKPGXZ^HSMoY3
+l78
+L38
+V7DV6dWbL[0<hF`ABc:XcV2
+OV;C;6.1g;31
+32
+M4 ieee std_logic_1164
+M3 ieee numeric_std
+M2 work sdram_lib
+M1 work functions
+o-work work -2002 -explicit -O0
+tExplicit 1 GenerateLoopIterationMax 100000
+Esdram_dp
+w1181120125
+DP work functions BWmf`>C5ZbXY[R7`o]:Ho3
+DP ieee numeric_std UJ3[eJ:lANeDSH1LT5b980
+DP ieee std_logic_1164 ChagfbCXBFdaC62b9Y:;<1
+dD:\Vitaly\programmation\fpga\gameoflife_sdram
+Fd:/Vitaly/programmation/fpga/gameoflife_sdram/sdram_dp.vhd
+l0
+L6
+V[ReQF@oV_dbWDdJAP8?1f3
+OV;C;6.1g;31
+32
+o-work work -2002 -explicit -O0
+tExplicit 1 GenerateLoopIterationMax 100000
+Aa1
+DP work functions BWmf`>C5ZbXY[R7`o]:Ho3
+DP ieee numeric_std UJ3[eJ:lANeDSH1LT5b980
+DP ieee std_logic_1164 ChagfbCXBFdaC62b9Y:;<1
+DE work sdram_dp [ReQF@oV_dbWDdJAP8?1f3
+l46
+L38
+V4>X`CK4LFn_bCJ5[7hCPS3
+OV;C;6.1g;31
+32
+M3 ieee std_logic_1164
+M2 ieee numeric_std
+M1 work functions
+o-work work -2002 -explicit -O0
+tExplicit 1 GenerateLoopIterationMax 100000
+Psdram_lib
+DP ieee numeric_std UJ3[eJ:lANeDSH1LT5b980
+DP ieee std_logic_1164 ChagfbCXBFdaC62b9Y:;<1
+w1181568575
+dD:\Vitaly\programmation\fpga\gameoflife_sdram
+Fd:/Vitaly/programmation/fpga/gameoflife_sdram/sdram_lib.vhd
+l0
+L5
+VmhW^VS]zQNP29Qnh6CY`i2
+OV;C;6.1g;31
+32
+M2 ieee std_logic_1164
+M1 ieee numeric_std
+o-work work -2002 -explicit -O0
+tExplicit 1 GenerateLoopIterationMax 100000
+Esdram_test
+w1181592007
+DP work functions BWmf`>C5ZbXY[R7`o]:Ho3
+DP work sdram_lib mhW^VS]zQNP29Qnh6CY`i2
+DP ieee numeric_std UJ3[eJ:lANeDSH1LT5b980
+DP ieee std_logic_1164 ChagfbCXBFdaC62b9Y:;<1
+dD:\Vitaly\programmation\fpga\gameoflife_sdram
+Fd:/Vitaly/programmation/fpga/gameoflife_sdram/sdram_test.vhd
+l0
+L8
+VL4k`VdJ@CWNiUWKAFILYz0
+OV;C;6.1g;31
+32
+o-work work -2002 -explicit -O0
+tExplicit 1 GenerateLoopIterationMax 100000
+Aa1
+DP work functions BWmf`>C5ZbXY[R7`o]:Ho3
+DP work sdram_lib mhW^VS]zQNP29Qnh6CY`i2
+DP ieee numeric_std UJ3[eJ:lANeDSH1LT5b980
+DP ieee std_logic_1164 ChagfbCXBFdaC62b9Y:;<1
+DE work sdram_test L4k`VdJ@CWNiUWKAFILYz0
+l40
+L31
+VM7LjH2m<;n7_::21>ZJlG3
+OV;C;6.1g;31
+32
+M4 ieee std_logic_1164
+M3 ieee numeric_std
+M2 work sdram_lib
+M1 work functions
+o-work work -2002 -explicit -O0
+tExplicit 1 GenerateLoopIterationMax 100000
+Euart_emitter
+w1180281570
+DP work functions BWmf`>C5ZbXY[R7`o]:Ho3
+DP work uart_lib 2Y4`VP>7YH0DEjAz>TC^k3
+DP ieee numeric_std UJ3[eJ:lANeDSH1LT5b980
+DP ieee std_logic_1164 ChagfbCXBFdaC62b9Y:;<1
+dD:\Vitaly\programmation\fpga\gameoflife_sdram
+Fd:/Vitaly/programmation/fpga/gameoflife/uart/uart_emitter.vhd
+l0
+L16
+VIh6SPE8I`M<31C?XDzQQT2
+OV;C;6.1g;31
+32
+o-work work -2002 -explicit -O0
+tExplicit 1 GenerateLoopIterationMax 100000
+Aarch1
+DP work functions BWmf`>C5ZbXY[R7`o]:Ho3
+DP work uart_lib 2Y4`VP>7YH0DEjAz>TC^k3
+DP ieee numeric_std UJ3[eJ:lANeDSH1LT5b980
+DP ieee std_logic_1164 ChagfbCXBFdaC62b9Y:;<1
+DE work uart_emitter Ih6SPE8I`M<31C?XDzQQT2
+l52
+L34
+VR3U7:[SZkW0>6_o5E>hgJ0
+OV;C;6.1g;31
+32
+M4 ieee std_logic_1164
+M3 ieee numeric_std
+M2 work uart_lib
+M1 work functions
+o-work work -2002 -explicit -O0
+tExplicit 1 GenerateLoopIterationMax 100000
+Euart_emitter_dp
+w1180270367
+DP ieee numeric_std UJ3[eJ:lANeDSH1LT5b980
+DP ieee std_logic_1164 ChagfbCXBFdaC62b9Y:;<1
+dD:\Vitaly\programmation\fpga\gameoflife_sdram
+Fd:/Vitaly/programmation/fpga/gameoflife/uart/uart_emitter_dp.vhd
+l0
+L11
+V>nGTYig3]M`C^b24cgeB@1
+OV;C;6.1g;31
+32
+o-work work -2002 -explicit -O0
+tExplicit 1 GenerateLoopIterationMax 100000
+Aedp1
+DP ieee numeric_std UJ3[eJ:lANeDSH1LT5b980
+DP ieee std_logic_1164 ChagfbCXBFdaC62b9Y:;<1
+DE work uart_emitter_dp >nGTYig3]M`C^b24cgeB@1
+l52
+L41
+V>aH]bc0WT9b8[g[gaK78H3
+OV;C;6.1g;31
+32
+M2 ieee std_logic_1164
+M1 ieee numeric_std
+o-work work -2002 -explicit -O0
+tExplicit 1 GenerateLoopIterationMax 100000
+Euart_emitter_sm
+w1180270560
+DP ieee numeric_std UJ3[eJ:lANeDSH1LT5b980
+DP ieee std_logic_1164 ChagfbCXBFdaC62b9Y:;<1
+dD:\Vitaly\programmation\fpga\gameoflife_sdram
+Fd:/Vitaly/programmation/fpga/gameoflife/uart/uart_emitter_sm.vhd
+l0
+L11
+V_Mc0=m>JRoPeWnGY[D8C53
+OV;C;6.1g;31
+32
+o-work work -2002 -explicit -O0
+tExplicit 1 GenerateLoopIterationMax 100000
+Aem1
+DP ieee numeric_std UJ3[eJ:lANeDSH1LT5b980
+DP ieee std_logic_1164 ChagfbCXBFdaC62b9Y:;<1
+DE work uart_emitter_sm _Mc0=m>JRoPeWnGY[D8C53
+l47
+L44
+VTWnmeB?]WW0UB3ag_GPLi0
+OV;C;6.1g;31
+32
+M2 ieee std_logic_1164
+M1 ieee numeric_std
+o-work work -2002 -explicit -O0
+tExplicit 1 GenerateLoopIterationMax 100000
+Puart_lib
+DP ieee numeric_std UJ3[eJ:lANeDSH1LT5b980
+DP ieee std_logic_1164 ChagfbCXBFdaC62b9Y:;<1
+w1180271234
+dD:\Vitaly\programmation\fpga\gameoflife_sdram
+Fd:/Vitaly/programmation/fpga/gameoflife/uart/uart_lib.vhd
+l0
+L14
+V2Y4`VP>7YH0DEjAz>TC^k3
+OV;C;6.1g;31
+32
+M2 ieee std_logic_1164
+M1 ieee numeric_std
+o-work work -2002 -explicit -O0
+tExplicit 1 GenerateLoopIterationMax 100000
+Euart_recv
+w1180266766
+DP work functions BWmf`>C5ZbXY[R7`o]:Ho3
+DP work uart_lib 2Y4`VP>7YH0DEjAz>TC^k3
+DP ieee numeric_std UJ3[eJ:lANeDSH1LT5b980
+DP ieee std_logic_1164 ChagfbCXBFdaC62b9Y:;<1
+dD:\Vitaly\programmation\fpga\gameoflife_sdram
+Fd:/Vitaly/programmation/fpga/gameoflife/uart/uart_recv.vhd
+l0
+L19
+V3bQfEKOA<SYm7ADRCA1fE0
+OV;C;6.1g;31
+32
+o-work work -2002 -explicit -O0
+tExplicit 1 GenerateLoopIterationMax 100000
+Aa1
+DP work functions BWmf`>C5ZbXY[R7`o]:Ho3
+DP work uart_lib 2Y4`VP>7YH0DEjAz>TC^k3
+DP ieee numeric_std UJ3[eJ:lANeDSH1LT5b980
+DP ieee std_logic_1164 ChagfbCXBFdaC62b9Y:;<1
+DE work uart_recv 3bQfEKOA<SYm7ADRCA1fE0
+l49
+L39
+V?RmS0bo5@15nAgIEJ5lP62
+OV;C;6.1g;31
+32
+M4 ieee std_logic_1164
+M3 ieee numeric_std
+M2 work uart_lib
+M1 work functions
+o-work work -2002 -explicit -O0
+tExplicit 1 GenerateLoopIterationMax 100000
+Euart_recv_dp
+w1180301252
+DP ieee numeric_std UJ3[eJ:lANeDSH1LT5b980
+DP ieee std_logic_1164 ChagfbCXBFdaC62b9Y:;<1
+dD:\Vitaly\programmation\fpga\gameoflife_sdram
+Fd:/Vitaly/programmation/fpga/gameoflife/uart/uart_recv_dp.vhd
+l0
+L13
+V:52Wb<=:k1cBA9DTU]DSU0
+OV;C;6.1g;31
+32
+o-work work -2002 -explicit -O0
+tExplicit 1 GenerateLoopIterationMax 100000
+Arxdp
+DP ieee numeric_std UJ3[eJ:lANeDSH1LT5b980
+DP ieee std_logic_1164 ChagfbCXBFdaC62b9Y:;<1
+DE work uart_recv_dp :52Wb<=:k1cBA9DTU]DSU0
+l51
+L36
+V]3_YDz_J3CdfUPeWnS=lH2
+OV;C;6.1g;31
+32
+M2 ieee std_logic_1164
+M1 ieee numeric_std
+o-work work -2002 -explicit -O0
+tExplicit 1 GenerateLoopIterationMax 100000
+Euart_recv_sm
+w1180266672
+DP ieee numeric_std UJ3[eJ:lANeDSH1LT5b980
+DP ieee std_logic_1164 ChagfbCXBFdaC62b9Y:;<1
+dD:\Vitaly\programmation\fpga\gameoflife_sdram
+Fd:/Vitaly/programmation/fpga/gameoflife/uart/uart_recv_sm.vhd
+l0
+L12
+VRCc;00O<GC_bNaIJgZklQ1
+OV;C;6.1g;31
+32
+o-work work -2002 -explicit -O0
+tExplicit 1 GenerateLoopIterationMax 100000
+Asm1
+DP ieee numeric_std UJ3[eJ:lANeDSH1LT5b980
+DP ieee std_logic_1164 ChagfbCXBFdaC62b9Y:;<1
+DE work uart_recv_sm RCc;00O<GC_bNaIJgZklQ1
+l47
+L44
+Vel?mh]c6RSn87aG16[5440
+OV;C;6.1g;31
+32
+M2 ieee std_logic_1164
+M1 ieee numeric_std
+o-work work -2002 -explicit -O0
+tExplicit 1 GenerateLoopIterationMax 100000
+Evga
+w1180290558
+DP ieee numeric_std UJ3[eJ:lANeDSH1LT5b980
+DP ieee std_logic_1164 ChagfbCXBFdaC62b9Y:;<1
+dD:\Vitaly\programmation\fpga\gameoflife_sdram
+Fd:/Vitaly/programmation/fpga/gameoflife/vga.vhd
+l0
+L23
+V9:Ja_S46WOzC9]3ZA1o0d2
+OV;C;6.1g;31
+32
+o-work work -2002 -explicit -O0
+tExplicit 1 GenerateLoopIterationMax 100000
+Avga1
+DP ieee numeric_std UJ3[eJ:lANeDSH1LT5b980
+DP ieee std_logic_1164 ChagfbCXBFdaC62b9Y:;<1
+DE work vga 9:Ja_S46WOzC9]3ZA1o0d2
+l64
+L55
+V2T7RJ_f;d=A4kACNhVW8d0
+OV;C;6.1g;31
+32
+M2 ieee std_logic_1164
+M1 ieee numeric_std
+o-work work -2002 -explicit -O0
+tExplicit 1 GenerateLoopIterationMax 100000
+Pvga_lib
+DP work functions BWmf`>C5ZbXY[R7`o]:Ho3
+DP ieee numeric_std UJ3[eJ:lANeDSH1LT5b980
+DP ieee std_logic_1164 ChagfbCXBFdaC62b9Y:;<1
+w1180291329
+dD:\Vitaly\programmation\fpga\gameoflife_sdram
+Fd:/Vitaly/programmation/fpga/gameoflife/vga_lib.vhd
+l0
+L6
+VPNnUSL7hSn7zNSIkWUz[@0
+OV;C;6.1g;31
+32
+M3 ieee std_logic_1164
+M2 ieee numeric_std
+M1 work functions
+o-work work -2002 -explicit -O0
+tExplicit 1 GenerateLoopIterationMax 100000

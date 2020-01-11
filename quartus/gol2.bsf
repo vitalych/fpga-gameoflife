@@ -1,0 +1,338 @@
+/*
+WARNING: Do NOT edit the input and output ports in this file in a text
+editor if you plan to continue editing the block that represents it in
+the Block Editor! File corruption is VERY likely to occur.
+*/
+/*
+Copyright (C) 1991-2007 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+*/
+(header "symbol" (version "1.1"))
+(symbol
+	(rect 16 16 376 304)
+	(text "gol2" (rect 5 0 25 12)(font "Arial" ))
+	(text "inst" (rect 8 272 25 284)(font "Arial" ))
+	(port
+		(pt 0 32)
+		(input)
+		(text "clk" (rect 0 0 14 12)(font "Arial" ))
+		(text "clk" (rect 21 27 35 39)(font "Arial" ))
+		(line (pt 0 32)(pt 16 32)(line_width 1))
+	)
+	(port
+		(pt 0 48)
+		(input)
+		(text "sdram_clk" (rect 0 0 50 12)(font "Arial" ))
+		(text "sdram_clk" (rect 21 43 71 55)(font "Arial" ))
+		(line (pt 0 48)(pt 16 48)(line_width 1))
+	)
+	(port
+		(pt 0 64)
+		(input)
+		(text "reset" (rect 0 0 24 12)(font "Arial" ))
+		(text "reset" (rect 21 59 45 71)(font "Arial" ))
+		(line (pt 0 64)(pt 16 64)(line_width 1))
+	)
+	(port
+		(pt 0 80)
+		(input)
+		(text "button_nextframe" (rect 0 0 87 12)(font "Arial" ))
+		(text "button_nextframe" (rect 21 75 108 87)(font "Arial" ))
+		(line (pt 0 80)(pt 16 80)(line_width 1))
+	)
+	(port
+		(pt 0 96)
+		(input)
+		(text "button_singlestep" (rect 0 0 86 12)(font "Arial" ))
+		(text "button_singlestep" (rect 21 91 107 103)(font "Arial" ))
+		(line (pt 0 96)(pt 16 96)(line_width 1))
+	)
+	(port
+		(pt 0 112)
+		(input)
+		(text "uart_rx_grid" (rect 0 0 57 12)(font "Arial" ))
+		(text "uart_rx_grid" (rect 21 107 78 119)(font "Arial" ))
+		(line (pt 0 112)(pt 16 112)(line_width 1))
+	)
+	(port
+		(pt 0 128)
+		(input)
+		(text "uart_rx_pic" (rect 0 0 54 12)(font "Arial" ))
+		(text "uart_rx_pic" (rect 21 123 75 135)(font "Arial" ))
+		(line (pt 0 128)(pt 16 128)(line_width 1))
+	)
+	(port
+		(pt 0 144)
+		(input)
+		(text "update_texture" (rect 0 0 73 12)(font "Arial" ))
+		(text "update_texture" (rect 21 139 94 151)(font "Arial" ))
+		(line (pt 0 144)(pt 16 144)(line_width 1))
+	)
+	(port
+		(pt 0 160)
+		(input)
+		(text "update_grid" (rect 0 0 56 12)(font "Arial" ))
+		(text "update_grid" (rect 21 155 77 167)(font "Arial" ))
+		(line (pt 0 160)(pt 16 160)(line_width 1))
+	)
+	(port
+		(pt 360 32)
+		(output)
+		(text "vga_r" (rect 0 0 28 12)(font "Arial" ))
+		(text "vga_r" (rect 311 27 339 39)(font "Arial" ))
+		(line (pt 360 32)(pt 344 32)(line_width 1))
+	)
+	(port
+		(pt 360 48)
+		(output)
+		(text "vga_g" (rect 0 0 30 12)(font "Arial" ))
+		(text "vga_g" (rect 309 43 339 55)(font "Arial" ))
+		(line (pt 360 48)(pt 344 48)(line_width 1))
+	)
+	(port
+		(pt 360 64)
+		(output)
+		(text "vga_b" (rect 0 0 30 12)(font "Arial" ))
+		(text "vga_b" (rect 309 59 339 71)(font "Arial" ))
+		(line (pt 360 64)(pt 344 64)(line_width 1))
+	)
+	(port
+		(pt 360 80)
+		(output)
+		(text "vga_hsync" (rect 0 0 55 12)(font "Arial" ))
+		(text "vga_hsync" (rect 284 75 339 87)(font "Arial" ))
+		(line (pt 360 80)(pt 344 80)(line_width 1))
+	)
+	(port
+		(pt 360 96)
+		(output)
+		(text "vga_vsync" (rect 0 0 56 12)(font "Arial" ))
+		(text "vga_vsync" (rect 283 91 339 103)(font "Arial" ))
+		(line (pt 360 96)(pt 344 96)(line_width 1))
+	)
+	(port
+		(pt 360 112)
+		(output)
+		(text "leds[95..0]" (rect 0 0 51 12)(font "Arial" ))
+		(text "leds[95..0]" (rect 288 107 339 119)(font "Arial" ))
+		(line (pt 360 112)(pt 344 112)(line_width 3))
+	)
+	(port
+		(pt 360 128)
+		(output)
+		(text "sdram_cke" (rect 0 0 54 12)(font "Arial" ))
+		(text "sdram_cke" (rect 285 123 339 135)(font "Arial" ))
+		(line (pt 360 128)(pt 344 128)(line_width 1))
+	)
+	(port
+		(pt 360 144)
+		(output)
+		(text "sdram_cs" (rect 0 0 48 12)(font "Arial" ))
+		(text "sdram_cs" (rect 291 139 339 151)(font "Arial" ))
+		(line (pt 360 144)(pt 344 144)(line_width 1))
+	)
+	(port
+		(pt 360 160)
+		(output)
+		(text "sdram_ras_n" (rect 0 0 63 12)(font "Arial" ))
+		(text "sdram_ras_n" (rect 276 155 339 167)(font "Arial" ))
+		(line (pt 360 160)(pt 344 160)(line_width 1))
+	)
+	(port
+		(pt 360 176)
+		(output)
+		(text "sdram_cas_n" (rect 0 0 66 12)(font "Arial" ))
+		(text "sdram_cas_n" (rect 273 171 339 183)(font "Arial" ))
+		(line (pt 360 176)(pt 344 176)(line_width 1))
+	)
+	(port
+		(pt 360 192)
+		(output)
+		(text "sdram_we_n" (rect 0 0 61 12)(font "Arial" ))
+		(text "sdram_we_n" (rect 278 187 339 199)(font "Arial" ))
+		(line (pt 360 192)(pt 344 192)(line_width 1))
+	)
+	(port
+		(pt 360 208)
+		(output)
+		(text "sdram_address[sdram_row_width-1..0]" (rect 0 0 188 12)(font "Arial" ))
+		(text "sdram_address[sdram_row_width-1..0]" (rect 151 203 339 215)(font "Arial" ))
+		(line (pt 360 208)(pt 344 208)(line_width 3))
+	)
+	(port
+		(pt 360 224)
+		(output)
+		(text "sdram_bank_select[sdram_bank_width-1..0]" (rect 0 0 215 12)(font "Arial" ))
+		(text "sdram_bank_select[sdram_bank_width-1..0]" (rect 124 219 339 231)(font "Arial" ))
+		(line (pt 360 224)(pt 344 224)(line_width 3))
+	)
+	(port
+		(pt 360 240)
+		(output)
+		(text "sdram_dqm[sdram_dqm_size-1..0]" (rect 0 0 169 12)(font "Arial" ))
+		(text "sdram_dqm[sdram_dqm_size-1..0]" (rect 170 235 339 247)(font "Arial" ))
+		(line (pt 360 240)(pt 344 240)(line_width 3))
+	)
+	(port
+		(pt 360 256)
+		(bidir)
+		(text "sdram_data[sdram_data_width-1..0]" (rect 0 0 175 12)(font "Arial" ))
+		(text "sdram_data[sdram_data_width-1..0]" (rect 164 251 339 263)(font "Arial" ))
+		(line (pt 360 256)(pt 344 256)(line_width 3))
+	)
+	(parameter
+		"pixel_width"
+		"640"
+		""
+	)
+	(parameter
+		"vga_line_width"
+		"800"
+		""
+	)
+	(parameter
+		"vga_hsync_width"
+		"96"
+		""
+	)
+	(parameter
+		"vga_front_porch"
+		"20"
+		""
+	)
+	(parameter
+		"vga_back_porch"
+		"44"
+		""
+	)
+	(parameter
+		"pixel_height"
+		"480"
+		""
+	)
+	(parameter
+		"vga_line_height"
+		"525"
+		""
+	)
+	(parameter
+		"vga_vsync_width"
+		"2"
+		""
+	)
+	(parameter
+		"vga_vfront_porch"
+		"13"
+		""
+	)
+	(parameter
+		"vga_vback_porch"
+		"30"
+		""
+	)
+	(parameter
+		"vga_color_depth_bits"
+		"4"
+		""
+	)
+	(parameter
+		"sdram_row_width"
+		"12"
+		""
+	)
+	(parameter
+		"sdram_col_width"
+		"9"
+		""
+	)
+	(parameter
+		"sdram_bank_width"
+		"2"
+		""
+	)
+	(parameter
+		"sdram_data_width"
+		"32"
+		""
+	)
+	(parameter
+		"sdram_dqm_size"
+		"4"
+		""
+	)
+	(parameter
+		"sdram_cas_latency_cycles"
+		"3"
+		""
+	)
+	(parameter
+		"sdram_init_refresh_cycles"
+		"2"
+		""
+	)
+	(parameter
+		"gol_cell_size_po2"
+		"0"
+		""
+	)
+	(parameter
+		"gol_cells_per_row"
+		"80"
+		""
+	)
+	(parameter
+		"gol_cells_per_col"
+		"60"
+		""
+	)
+	(parameter
+		"gol_grid_color"
+		"15"
+		""
+	)
+	(parameter
+		"gol_file1"
+		"S\"d:/Vitaly/programmation/fpga/gameoflife/converter/gol1_0.hex\""
+		""
+	)
+	(parameter
+		"gol_file2"
+		"S\"d:/Vitaly/programmation/fpga/gameoflife/converter/gol1_1.hex\""
+		""
+	)
+	(parameter
+		"gol_file3"
+		"S\"d:/Vitaly/programmation/fpga/gameoflife/converter/gol1_2.hex\""
+		""
+	)
+	(parameter
+		"clock_speed"
+		"33000000"
+		""
+	)
+	(parameter
+		"sdram_clock_speed"
+		"33000000"
+		""
+	)
+	(parameter
+		"baud_rate"
+		"115200"
+		""
+	)
+	(drawing
+		(rectangle (rect 16 16 344 272)(line_width 1))
+	)
+	(annotation_block (parameter)(rect 376 -64 476 16))
+)

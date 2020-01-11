@@ -1,0 +1,57 @@
+Project: gameoflife
+Revision: gameoflife
+Flow Start Date: Sun May 27 21:12:19 Romance Daylight Time 2007
+Flow End Date: Sun May 27 21:16:10 Romance Daylight Time 2007
+
+Detailed Results
+Point,base,base-fast,1 (Best),1-fast,2
+All Clock Hold Failing Paths,0,0,0,0,unknown
+All Clock Recovery Failing Paths,0,0,0,0,unknown
+All Clock Removal Failing Paths,0,0,0,0,unknown
+All Clock Setup Failing Paths,2546,0,38,0,unknown
+All Failing Paths,2546,0,38,0,unknown
+Average fan-out,3.67,3.67,3.58,3.58,unknown
+Average Slack for Failing Paths,0,0,0,0,unknown
+Clock Hold: 'pll1:inst1|altpll:altpll_component|_clk0': Actual Time,unknown,unknown,unknown,unknown,unknown
+Clock Hold: 'pll1:inst1|altpll:altpll_component|_clk0': Failed Paths,0,0,0,0,unknown
+Clock Hold: 'pll1:inst1|altpll:altpll_component|_clk0': Slack,0.499 ns,0.215 ns,0.499 ns,0.215 ns,unknown
+Clock Period: Geometric Mean,11.37 ns,4.25 ns,9.52 ns,4.25 ns,unknown
+Clock Setup: 'pll1:inst1|altpll:altpll_component|_clk0': Actual Time,11.371 ns,4.254 ns,9.521 ns,4.254 ns,unknown
+Clock Setup: 'pll1:inst1|altpll:altpll_component|_clk0': Failed Paths,2546,0,38,0,unknown
+Clock Setup: 'pll1:inst1|altpll:altpll_component|_clk0': Slack,-2.112 ns,5.238 ns,-0.262 ns,5.458 ns,unknown
+Core Dynamic Thermal Power Dissipation,unknown,unknown,unknown,unknown,unknown
+Core Static Thermal Power Dissipation,unknown,unknown,unknown,unknown,unknown
+Elapsed Time: Analysis & Synthesis,00:00:17,00:00:17,00:00:17,00:00:17,unknown
+Elapsed Time: Assembler,00:00:12,00:00:12,00:00:13,00:00:13,unknown
+Elapsed Time: Classic Timing Analyzer,00:00:04,00:00:04,00:00:04,00:00:04,unknown
+Elapsed Time: Design Assistant,00:00:02,00:00:02,00:00:02,00:00:02,unknown
+Elapsed Time: Fitter,00:01:14,00:01:14,00:02:48,00:02:48,unknown
+Elapsed Time: Total,00:01:49,00:01:49,00:04:54,00:04:54,unknown
+Embedded Multiplier 9-bit elements,0,0,0,0,unknown
+I/O pins,116,116,116,116,unknown
+I/O Thermal Power Dissipation,unknown,unknown,unknown,unknown,unknown
+Logic cells,1159,1159,1215,1215,unknown
+M-RAMs,unknown,unknown,unknown,unknown,unknown
+M4Ks,52,52,52,52,unknown
+M512s,unknown,unknown,unknown,unknown,unknown
+Maximum fan-out,404,404,491,491,unknown
+Maximum fan-out node,pll1:inst1|altpll:altpll_component|_clk0,pll1:inst1|altpll:altpll_component|_clk0,pll1:inst1|altpll:altpll_component|_clk0,pll1:inst1|altpll:altpll_component|_clk0,unknown
+PLLs,1,1,1,1,unknown
+Power Estimation Confidence,unknown,unknown,unknown,unknown,unknown
+Quality of Fit,-1.92475,0.4089875,-0.07475,0.4103625,unknown
+Registers,unknown,unknown,unknown,unknown,unknown
+Timing Model,Slow,Fast,Slow,Fast,unknown
+Total fan-out,6159,6159,6509,6509,unknown
+Total memory bits,208896,208896,208896,208896,unknown
+Total RAM block bits,239616,239616,239616,239616,unknown
+Total Thermal Power Dissipation,unknown,unknown,unknown,unknown,unknown
+Worst-case Slack,-2.112 ns (Clock Slack: 'pll1:inst1|altpll:altpll_component|_clk0'),0.215 ns (Clock Hold: 'pll1:inst1|altpll:altpll_component|_clk0'),-0.262 ns (Clock Slack: 'pll1:inst1|altpll:altpll_component|_clk0'),0.215 ns (Clock Hold: 'pll1:inst1|altpll:altpll_component|_clk0'),unknown
+Worst-case tco: Actual Time,8.885 ns,2.929 ns,10.441 ns,3.702 ns,unknown
+Worst-case tco: Failed Paths,0,0,0,0,unknown
+Worst-case tco: Slack,unknown,unknown,unknown,unknown,unknown
+Worst-case th: Actual Time,-7.882 ns,-4.049 ns,-7.740 ns,-4.003 ns,unknown
+Worst-case th: Failed Paths,0,0,0,0,unknown
+Worst-case th: Slack,unknown,unknown,unknown,unknown,unknown
+Worst-case tsu: Actual Time,16.246 ns,6.686 ns,15.864 ns,6.557 ns,unknown
+Worst-case tsu: Failed Paths,0,0,0,0,unknown
+Worst-case tsu: Slack,unknown,unknown,unknown,unknown,unknown
