@@ -24,56 +24,56 @@ use ieee.numeric_std.all;
 use work.functions.all;
 
 package ram_lib is
-	component ram2port2clock is
-		generic (
-			word_width : natural := 32;
-			address_width : natural := 6
-		);
-		port (
-			address_a : in STD_LOGIC_VECTOR (address_width - 1 downto 0);
-			address_b : in STD_LOGIC_VECTOR (address_width - 1 downto 0);
-			clock_a : in STD_LOGIC;
-			clock_b : in STD_LOGIC;
-			data_a : in STD_LOGIC_VECTOR (word_width - 1 downto 0);
-			data_b : in STD_LOGIC_VECTOR (word_width - 1 downto 0);
-			wren_a : in STD_LOGIC := '0';
-			wren_b : in STD_LOGIC := '0';
-			q_a : out STD_LOGIC_VECTOR (word_width - 1 downto 0);
-			q_b : out STD_LOGIC_VECTOR (word_width - 1 downto 0)
-		);
-	end component;
-	component ram is
-		generic (
-			word_width : natural := 4;
-			address_width : natural := 13;
-			init_file : string);
+    component ram2port2clock is
+        generic (
+            word_width : natural := 32;
+            address_width : natural := 6
+        );
+        port (
+            address_a : in STD_LOGIC_VECTOR (address_width - 1 downto 0);
+            address_b : in STD_LOGIC_VECTOR (address_width - 1 downto 0);
+            clock_a : in STD_LOGIC;
+            clock_b : in STD_LOGIC;
+            data_a : in STD_LOGIC_VECTOR (word_width - 1 downto 0);
+            data_b : in STD_LOGIC_VECTOR (word_width - 1 downto 0);
+            wren_a : in STD_LOGIC := '0';
+            wren_b : in STD_LOGIC := '0';
+            q_a : out STD_LOGIC_VECTOR (word_width - 1 downto 0);
+            q_b : out STD_LOGIC_VECTOR (word_width - 1 downto 0)
+        );
+    end component;
+    component ram is
+        generic (
+            word_width : natural := 4;
+            address_width : natural := 13;
+            init_file : string);
 
-		port (
-			clk : in std_logic;
-			address1 : in unsigned(address_width - 1 downto 0);
-			read1_data : out unsigned(word_width - 1 downto 0);
-			write1_en : in std_logic;
-			write1_data : in unsigned(word_width - 1 downto 0)
-		);
-	end component;
+        port (
+            clk : in std_logic;
+            address1 : in unsigned(address_width - 1 downto 0);
+            read1_data : out unsigned(word_width - 1 downto 0);
+            write1_en : in std_logic;
+            write1_data : in unsigned(word_width - 1 downto 0)
+        );
+    end component;
 
-	component ram2port is
-		generic (
-			data_width : natural := 3;
-			address_width : natural := 16;
-			init_file : string
-		);
-		port (
-			clk : in std_logic;
-			address1 : in unsigned(address_width - 1 downto 0);
-			read1_data : out unsigned(data_width - 1 downto 0);
-			write1_en : in std_logic;
-			write1_data : in unsigned(data_width - 1 downto 0);
+    component ram2port is
+        generic (
+            data_width : natural := 3;
+            address_width : natural := 16;
+            init_file : string
+        );
+        port (
+            clk : in std_logic;
+            address1 : in unsigned(address_width - 1 downto 0);
+            read1_data : out unsigned(data_width - 1 downto 0);
+            write1_en : in std_logic;
+            write1_data : in unsigned(data_width - 1 downto 0);
 
-			address2 : in unsigned(address_width - 1 downto 0);
-			read2_data : out unsigned(data_width - 1 downto 0);
-			write2_en : in std_logic;
-			write2_data : in unsigned(data_width - 1 downto 0)
-		);
-	end component;
+            address2 : in unsigned(address_width - 1 downto 0);
+            read2_data : out unsigned(data_width - 1 downto 0);
+            write2_en : in std_logic;
+            write2_data : in unsigned(data_width - 1 downto 0)
+        );
+    end component;
 end ram_lib;

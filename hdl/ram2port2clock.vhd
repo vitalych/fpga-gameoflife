@@ -36,112 +36,112 @@ library altera_mf;
 use altera_mf.all;
 
 entity ram2port2clock is
-	generic (
-		word_width : natural := 32;
-		address_width : natural := 6
-	);
-	port (
-		address_a : in STD_LOGIC_VECTOR (address_width - 1 downto 0);
-		address_b : in STD_LOGIC_VECTOR (address_width - 1 downto 0);
-		clock_a : in STD_LOGIC;
-		clock_b : in STD_LOGIC;
-		data_a : in STD_LOGIC_VECTOR (word_width - 1 downto 0);
-		data_b : in STD_LOGIC_VECTOR (word_width - 1 downto 0);
-		wren_a : in STD_LOGIC := '0';
-		wren_b : in STD_LOGIC := '0';
-		q_a : out STD_LOGIC_VECTOR (word_width - 1 downto 0);
-		q_b : out STD_LOGIC_VECTOR (word_width - 1 downto 0)
-	);
+    generic (
+        word_width : natural := 32;
+        address_width : natural := 6
+    );
+    port (
+        address_a : in STD_LOGIC_VECTOR (address_width - 1 downto 0);
+        address_b : in STD_LOGIC_VECTOR (address_width - 1 downto 0);
+        clock_a : in STD_LOGIC;
+        clock_b : in STD_LOGIC;
+        data_a : in STD_LOGIC_VECTOR (word_width - 1 downto 0);
+        data_b : in STD_LOGIC_VECTOR (word_width - 1 downto 0);
+        wren_a : in STD_LOGIC := '0';
+        wren_b : in STD_LOGIC := '0';
+        q_a : out STD_LOGIC_VECTOR (word_width - 1 downto 0);
+        q_b : out STD_LOGIC_VECTOR (word_width - 1 downto 0)
+    );
 end ram2port2clock;
 architecture SYN of ram2port2clock is
 
-	signal sub_wire0 : STD_LOGIC_VECTOR (31 downto 0);
-	signal sub_wire1 : STD_LOGIC_VECTOR (31 downto 0);
+    signal sub_wire0 : STD_LOGIC_VECTOR (31 downto 0);
+    signal sub_wire1 : STD_LOGIC_VECTOR (31 downto 0);
 
-	component altsyncram
-		generic (
-			address_reg_b : string;
-			clock_enable_input_a : string;
-			clock_enable_input_b : string;
-			clock_enable_output_a : string;
-			clock_enable_output_b : string;
-			indata_reg_b : string;
-			intended_device_family : string;
-			lpm_type : string;
-			numwords_a : natural;
-			numwords_b : natural;
-			operation_mode : string;
-			outdata_aclr_a : string;
-			outdata_aclr_b : string;
-			outdata_reg_a : string;
-			outdata_reg_b : string;
-			power_up_uninitialized : string;
-			read_during_write_mode_mixed_ports : string;
-			widthad_a : natural;
-			widthad_b : natural;
-			width_a : natural;
-			width_b : natural;
-			width_byteena_a : natural;
-			width_byteena_b : natural;
-			wrcontrol_wraddress_reg_b : string
-		);
-		port (
-			wren_a : in STD_LOGIC;
-			clock0 : in STD_LOGIC;
-			wren_b : in STD_LOGIC;
-			clock1 : in STD_LOGIC;
-			address_a : in STD_LOGIC_VECTOR (address_width - 1 downto 0);
-			address_b : in STD_LOGIC_VECTOR (address_width - 1 downto 0);
-			q_a : out STD_LOGIC_VECTOR (word_width - 1 downto 0);
-			q_b : out STD_LOGIC_VECTOR (word_width - 1 downto 0);
-			data_a : in STD_LOGIC_VECTOR (word_width - 1 downto 0);
-			data_b : in STD_LOGIC_VECTOR (word_width - 1 downto 0)
-		);
-	end component;
+    component altsyncram
+        generic (
+            address_reg_b : string;
+            clock_enable_input_a : string;
+            clock_enable_input_b : string;
+            clock_enable_output_a : string;
+            clock_enable_output_b : string;
+            indata_reg_b : string;
+            intended_device_family : string;
+            lpm_type : string;
+            numwords_a : natural;
+            numwords_b : natural;
+            operation_mode : string;
+            outdata_aclr_a : string;
+            outdata_aclr_b : string;
+            outdata_reg_a : string;
+            outdata_reg_b : string;
+            power_up_uninitialized : string;
+            read_during_write_mode_mixed_ports : string;
+            widthad_a : natural;
+            widthad_b : natural;
+            width_a : natural;
+            width_b : natural;
+            width_byteena_a : natural;
+            width_byteena_b : natural;
+            wrcontrol_wraddress_reg_b : string
+        );
+        port (
+            wren_a : in STD_LOGIC;
+            clock0 : in STD_LOGIC;
+            wren_b : in STD_LOGIC;
+            clock1 : in STD_LOGIC;
+            address_a : in STD_LOGIC_VECTOR (address_width - 1 downto 0);
+            address_b : in STD_LOGIC_VECTOR (address_width - 1 downto 0);
+            q_a : out STD_LOGIC_VECTOR (word_width - 1 downto 0);
+            q_b : out STD_LOGIC_VECTOR (word_width - 1 downto 0);
+            data_a : in STD_LOGIC_VECTOR (word_width - 1 downto 0);
+            data_b : in STD_LOGIC_VECTOR (word_width - 1 downto 0)
+        );
+    end component;
 
 begin
-	q_a <= sub_wire0(31 downto 0);
-	q_b <= sub_wire1(31 downto 0);
+    q_a <= sub_wire0(31 downto 0);
+    q_b <= sub_wire1(31 downto 0);
 
-	altsyncram_component : altsyncram
-	generic map(
-		address_reg_b => "CLOCK1",
-		clock_enable_input_a => "BYPASS",
-		clock_enable_input_b => "BYPASS",
-		clock_enable_output_a => "BYPASS",
-		clock_enable_output_b => "BYPASS",
-		indata_reg_b => "CLOCK1",
-		intended_device_family => "Cyclone II",
-		lpm_type => "altsyncram",
-		numwords_a => 2 ** address_width,
-		numwords_b => 2 ** address_width,
-		operation_mode => "BIDIR_DUAL_PORT",
-		outdata_aclr_a => "NONE",
-		outdata_aclr_b => "NONE",
-		outdata_reg_a => "UNREGISTERED",
-		outdata_reg_b => "UNREGISTERED",
-		power_up_uninitialized => "FALSE",
-		read_during_write_mode_mixed_ports => "DONT_CARE",
-		widthad_a => address_width,
-		widthad_b => address_width,
-		width_a => word_width,
-		width_b => word_width,
-		width_byteena_a => 1,
-		width_byteena_b => 1,
-		wrcontrol_wraddress_reg_b => "CLOCK1"
-	)
-	port map(
-		wren_a => wren_a,
-		clock0 => clock_a,
-		wren_b => wren_b,
-		clock1 => clock_b,
-		address_a => address_a,
-		address_b => address_b,
-		data_a => data_a,
-		data_b => data_b,
-		q_a => sub_wire0,
-		q_b => sub_wire1
-	);
+    altsyncram_component : altsyncram
+    generic map(
+        address_reg_b => "CLOCK1",
+        clock_enable_input_a => "BYPASS",
+        clock_enable_input_b => "BYPASS",
+        clock_enable_output_a => "BYPASS",
+        clock_enable_output_b => "BYPASS",
+        indata_reg_b => "CLOCK1",
+        intended_device_family => "Cyclone II",
+        lpm_type => "altsyncram",
+        numwords_a => 2 ** address_width,
+        numwords_b => 2 ** address_width,
+        operation_mode => "BIDIR_DUAL_PORT",
+        outdata_aclr_a => "NONE",
+        outdata_aclr_b => "NONE",
+        outdata_reg_a => "UNREGISTERED",
+        outdata_reg_b => "UNREGISTERED",
+        power_up_uninitialized => "FALSE",
+        read_during_write_mode_mixed_ports => "DONT_CARE",
+        widthad_a => address_width,
+        widthad_b => address_width,
+        width_a => word_width,
+        width_b => word_width,
+        width_byteena_a => 1,
+        width_byteena_b => 1,
+        wrcontrol_wraddress_reg_b => "CLOCK1"
+    )
+    port map(
+        wren_a => wren_a,
+        clock0 => clock_a,
+        wren_b => wren_b,
+        clock1 => clock_b,
+        address_a => address_a,
+        address_b => address_b,
+        data_a => data_a,
+        data_b => data_b,
+        q_a => sub_wire0,
+        q_b => sub_wire1
+    );
 
 end SYN;
 

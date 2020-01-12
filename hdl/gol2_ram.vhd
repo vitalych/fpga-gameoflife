@@ -36,71 +36,71 @@ library altera_mf;
 use altera_mf.all;
 
 entity gol2_ram is
-	port (
-		address : in STD_LOGIC_VECTOR (10 downto 0);
-		clock : in STD_LOGIC;
-		data : in STD_LOGIC_VECTOR (0 downto 0);
-		wren : in STD_LOGIC;
-		q : out STD_LOGIC_VECTOR (0 downto 0)
-	);
+    port (
+        address : in STD_LOGIC_VECTOR (10 downto 0);
+        clock : in STD_LOGIC;
+        data : in STD_LOGIC_VECTOR (0 downto 0);
+        wren : in STD_LOGIC;
+        q : out STD_LOGIC_VECTOR (0 downto 0)
+    );
 end gol2_ram;
 architecture SYN of gol2_ram is
 
-	signal sub_wire0 : STD_LOGIC_VECTOR (0 downto 0);
+    signal sub_wire0 : STD_LOGIC_VECTOR (0 downto 0);
 
-	component altsyncram
-		generic (
-			clock_enable_input_a : string;
-			clock_enable_output_a : string;
-			init_file : string;
-			intended_device_family : string;
-			lpm_hint : string;
-			lpm_type : string;
-			numwords_a : natural;
-			operation_mode : string;
-			outdata_aclr_a : string;
-			outdata_reg_a : string;
-			power_up_uninitialized : string;
-			widthad_a : natural;
-			width_a : natural;
-			width_byteena_a : natural
-		);
-		port (
-			wren_a : in STD_LOGIC;
-			clock0 : in STD_LOGIC;
-			address_a : in STD_LOGIC_VECTOR (10 downto 0);
-			q_a : out STD_LOGIC_VECTOR (0 downto 0);
-			data_a : in STD_LOGIC_VECTOR (0 downto 0)
-		);
-	end component;
+    component altsyncram
+        generic (
+            clock_enable_input_a : string;
+            clock_enable_output_a : string;
+            init_file : string;
+            intended_device_family : string;
+            lpm_hint : string;
+            lpm_type : string;
+            numwords_a : natural;
+            operation_mode : string;
+            outdata_aclr_a : string;
+            outdata_reg_a : string;
+            power_up_uninitialized : string;
+            widthad_a : natural;
+            width_a : natural;
+            width_byteena_a : natural
+        );
+        port (
+            wren_a : in STD_LOGIC;
+            clock0 : in STD_LOGIC;
+            address_a : in STD_LOGIC_VECTOR (10 downto 0);
+            q_a : out STD_LOGIC_VECTOR (0 downto 0);
+            data_a : in STD_LOGIC_VECTOR (0 downto 0)
+        );
+    end component;
 
 begin
-	q <= sub_wire0(0 downto 0);
+    q <= sub_wire0(0 downto 0);
 
-	altsyncram_component : altsyncram
-	generic map(
-		clock_enable_input_a => "BYPASS",
-		clock_enable_output_a => "BYPASS",
-		init_file => "d:/Vitaly/programmation/fpga/uart/converter/gol1.mif",
-		intended_device_family => "Cyclone II",
-		lpm_hint => "ENABLE_RUNTIME_MOD=NO",
-		lpm_type => "altsyncram",
-		numwords_a => 2048,
-		operation_mode => "SINGLE_PORT",
-		outdata_aclr_a => "NONE",
-		outdata_reg_a => "UNREGISTERED",
-		power_up_uninitialized => "FALSE",
-		widthad_a => 11,
-		width_a => 1,
-		width_byteena_a => 1
-	)
-	port map(
-		wren_a => wren,
-		clock0 => clock,
-		address_a => address,
-		data_a => data,
-		q_a => sub_wire0
-	);
+    altsyncram_component : altsyncram
+    generic map(
+        clock_enable_input_a => "BYPASS",
+        clock_enable_output_a => "BYPASS",
+        init_file => "d:/Vitaly/programmation/fpga/uart/converter/gol1.mif",
+        intended_device_family => "Cyclone II",
+        lpm_hint => "ENABLE_RUNTIME_MOD=NO",
+        lpm_type => "altsyncram",
+        numwords_a => 2048,
+        operation_mode => "SINGLE_PORT",
+        outdata_aclr_a => "NONE",
+        outdata_reg_a => "UNREGISTERED",
+        power_up_uninitialized => "FALSE",
+        widthad_a => 11,
+        width_a => 1,
+        width_byteena_a => 1
+    )
+    port map(
+        wren_a => wren,
+        clock0 => clock,
+        address_a => address,
+        data_a => data,
+        q_a => sub_wire0
+    );
 
 end SYN;
 
