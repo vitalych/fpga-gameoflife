@@ -1,15 +1,15 @@
 -- Copyright (c) 2007-2020 Vitaly Chipounov
--- 
+--
 -- Permission is hereby granted, free of charge, to any person obtaining a copy
 -- of this software and associated documentation files (the "Software"), to deal
 -- in the Software without restriction, including without limitation the rights
 -- to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
 -- copies of the Software, and to permit persons to whom the Software is
 -- furnished to do so, subject to the following conditions:
--- 
+--
 -- The above copyright notice and this permission notice shall be included in all
 -- copies or substantial portions of the Software.
--- 
+--
 -- THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
 -- IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
 -- FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
@@ -53,7 +53,7 @@ package body functions is
 
     function CEIL (X : real) return real is
         -- returns smallest integer value (as real) not less than X
-        -- No conversion to an integer type is expected, so truncate cannot 
+        -- No conversion to an integer type is expected, so truncate cannot
         -- overflow for large arguments.
 
         variable large : real := 1073741824.0;
@@ -86,9 +86,9 @@ package body functions is
 
     function FLOOR (X : real) return real is
         -- returns largest integer value (as real) not greater than X
-        -- No conversion to an integer type is expected, so truncate 
+        -- No conversion to an integer type is expected, so truncate
         -- cannot overflow for large arguments.
-        -- 
+        --
         variable large : real := 1073741824.0;
         type long is range -1073741824 to 1073741824;
         -- 2**30 is longer than any single-precision mantissa

@@ -1,15 +1,15 @@
 -- Copyright (c) 2007-2020 Vitaly Chipounov
--- 
+--
 -- Permission is hereby granted, free of charge, to any person obtaining a copy
 -- of this software and associated documentation files (the "Software"), to deal
 -- in the Software without restriction, including without limitation the rights
 -- to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
 -- copies of the Software, and to permit persons to whom the Software is
 -- furnished to do so, subject to the following conditions:
--- 
+--
 -- The above copyright notice and this permission notice shall be included in all
 -- copies or substantial portions of the Software.
--- 
+--
 -- THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
 -- IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
 -- FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
@@ -42,13 +42,13 @@ entity uart_recv_sm is
     rx_data_en : out std_logic;
 
     --Signaled when 11 bits of a packet a
-    --received.    
+    --received.
     sc_iseleven : in std_logic;
 
     --Cycle counter control.
     --The cycle counter waits for a bit to be received.
 
-    --Increment the counter    
+    --Increment the counter
     cc_incr : out std_logic;
     cc_reset : out std_logic;
 
@@ -76,9 +76,9 @@ begin
     ready <= '0';
 
     case current_state is
-        --As soon as the rx line drops to 
+        --As soon as the rx line drops to
         --zero, begin the receiving process.
-        --It is the beginning of the start bit. 
+        --It is the beginning of the start bit.
       when init =>
         if (rx = '1')
           then
@@ -89,7 +89,7 @@ begin
 
         --We receive 11 bits of a packet.
         --This include the start bit, data, parity
-        --and stop bit. 
+        --and stop bit.
       when recv =>
         rx_data_en <= '1';
         cc_incr <= '1';
