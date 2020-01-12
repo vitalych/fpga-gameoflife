@@ -25,64 +25,64 @@ use work.functions.all;
 
 package vga_lib is
 
-	component vga is
-		generic (
-			pixel_width : natural := 640;
-			line_width : natural := 800;
-			hsync_width : natural := 96;
-			front_porch : natural := 20;
-			back_porch : natural := 44;
+    component vga is
+        generic (
+            pixel_width : natural := 640;
+            line_width : natural := 800;
+            hsync_width : natural := 96;
+            front_porch : natural := 20;
+            back_porch : natural := 44;
 
-			pixel_height : natural := 480;
-			line_height : natural := 525;
-			vsync_width : natural := 2;
-			vfront_porch : natural := 13;
-			vback_porch : natural := 30
-		);
+            pixel_height : natural := 480;
+            line_height : natural := 525;
+            vsync_width : natural := 2;
+            vfront_porch : natural := 13;
+            vback_porch : natural := 30
+        );
 
-		port (
-			clk : in std_logic;
-			reset : in std_logic;
-			red, green, blue : in std_logic;
-			r, g, b, vsync, hsync : out std_logic;
-			v_retrace, h_retrace : out std_logic;
-			row : out unsigned(log2(pixel_height) - 1 downto 0);
-			col : out unsigned(log2(pixel_width) - 1 downto 0)
-		);
-	end component;
+        port (
+            clk : in std_logic;
+            reset : in std_logic;
+            red, green, blue : in std_logic;
+            r, g, b, vsync, hsync : out std_logic;
+            v_retrace, h_retrace : out std_logic;
+            row : out unsigned(log2(pixel_height) - 1 downto 0);
+            col : out unsigned(log2(pixel_width) - 1 downto 0)
+        );
+    end component;
 
-	component gfx_bouncer is
-		generic (
-			screen_width : natural := 640;
-			screen_height : natural := 480;
+    component gfx_bouncer is
+        generic (
+            screen_width : natural := 640;
+            screen_height : natural := 480;
 
-			pic_width : natural := 256;
-			pic_height : natural := 256;
-			color_depth : natural := 4
-		);
+            pic_width : natural := 256;
+            pic_height : natural := 256;
+            color_depth : natural := 4
+        );
 
-		port (
-			clk : in std_logic;
-			reset : in std_logic;
+        port (
+            clk : in std_logic;
+            reset : in std_logic;
 
-			--The current row/column being displayed by the vga
-			--controller. It expects to get the cooresponding 
-			--color on the next cycle.
-			row : in unsigned(log2(screen_height) - 1 downto 0);
-			col : in unsigned(log2(screen_width) - 1 downto 0);
-			rgb_out : out unsigned(color_depth - 1 downto 0);
+            --The current row/column being displayed by the vga
+            --controller. It expects to get the cooresponding 
+            --color on the next cycle.
+            row : in unsigned(log2(screen_height) - 1 downto 0);
+            col : in unsigned(log2(screen_width) - 1 downto 0);
+            rgb_out : out unsigned(color_depth - 1 downto 0);
 
-			--Memory address of the pixel requested by the
-			--vga controller
-			mem_offset : out unsigned(log2(pic_width * pic_height) - 1 downto 0);
-			--The value of the pixel, available on the next cycle
-			rgb_in : in unsigned(color_depth - 1 downto 0);
+            --Memory address of the pixel requested by the
+            --vga controller
+            mem_offset : out unsigned(log2(pic_width * pic_height) - 1 downto 0);
+            --The value of the pixel, available on the next cycle
+            rgb_in : in unsigned(color_depth - 1 downto 0);
 
-			v_retrace, h_retrace : in std_logic;
+            v_retrace, h_retrace : in std_logic;
 
-			--When the current row/col coordinates are out
-			--of the texture area, the background is visible.
-			bkgr_visible : out std_logic
-		);
-	end component;
+            --When the current row/col coordinates are out
+            --of the texture area, the background is visible.
+            bkgr_visible : out std_logic
+        );
+    end component;
 end package;

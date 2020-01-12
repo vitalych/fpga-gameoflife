@@ -34,61 +34,61 @@ use work.functions.all;
 --It is divided into three banks and modulo 3 using
 --normal division is very expensive.
 entity gol2_m3counter is
-	generic (
-		width : natural := 80;
-		bank_width : natural
-	);
-	port (
-		clk, reset : in std_logic;
-		step_col, step_row, reload : in std_logic;
-		col_offset : out unsigned(bank_width - 1 downto 0);
-		row_offset : out unsigned(bank_width - 1 downto 0);
-		m3cnt : out unsigned(1 downto 0)
-	);
+    generic (
+        width : natural := 80;
+        bank_width : natural
+    );
+    port (
+        clk, reset : in std_logic;
+        step_col, step_row, reload : in std_logic;
+        col_offset : out unsigned(bank_width - 1 downto 0);
+        row_offset : out unsigned(bank_width - 1 downto 0);
+        m3cnt : out unsigned(1 downto 0)
+    );
 
 end gol2_m3counter;
 
 architecture a1 of gol2_m3counter is
-	signal row_i : unsigned(bank_width - 1 downto 0);
-	signal col_i : unsigned(bank_width - 1 downto 0);
-	signal m3cnt_i : unsigned(1 downto 0);
+    signal row_i : unsigned(bank_width - 1 downto 0);
+    signal col_i : unsigned(bank_width - 1 downto 0);
+    signal m3cnt_i : unsigned(1 downto 0);
 begin
-	row_offset <= row_i;
-	col_offset <= col_i;
-	m3cnt <= m3cnt_i;
+    row_offset <= row_i;
+    col_offset <= col_i;
+    m3cnt <= m3cnt_i;
 
-	process (clk, reset)
-	begin
-		if (reset = '1') then
-			col_i <= (others => '0');
-			row_i <= (others => '0');
-			m3cnt_i <= (others => '0');
-		elsif (rising_edge(clk)) then
-			if (reload = '1') then
-				--we don't compute anything, keep all values zeroed
-				col_i <= (others => '0');
-				row_i <= (others => '0');
-				m3cnt_i <= (others => '0');
-			elsif (step_col = '1') then
-				--if the last column of the row is reached
-				if (col_i < (width - 1)) then
-					col_i <= col_i + 1;
-				else
+    process (clk, reset)
+    begin
+        if (reset = '1') then
+            col_i <= (others => '0');
+            row_i <= (others => '0');
+            m3cnt_i <= (others => '0');
+        elsif (rising_edge(clk)) then
+            if (reload = '1') then
+                --we don't compute anything, keep all values zeroed
+                col_i <= (others => '0');
+                row_i <= (others => '0');
+                m3cnt_i <= (others => '0');
+            elsif (step_col = '1') then
+                --if the last column of the row is reached
+                if (col_i < (width - 1)) then
+                    col_i <= col_i + 1;
+                else
 
-					--restart at the first column
-					col_i <= (others => '0');
-					--switch to the next bank
-					if (step_row = '1') then
-						if (m3cnt_i = 2) then
-							row_i <= row_i + width;
-							m3cnt_i <= (others => '0');
-						else
-							m3cnt_i <= m3cnt_i + 1;
-						end if;
-					end if;
-				end if;
-			end if;
-		end if;
-	end process;
+                    --restart at the first column
+                    col_i <= (others => '0');
+                    --switch to the next bank
+                    if (step_row = '1') then
+                        if (m3cnt_i = 2) then
+                            row_i <= row_i + width;
+                            m3cnt_i <= (others => '0');
+                        else
+                            m3cnt_i <= m3cnt_i + 1;
+                        end if;
+                    end if;
+                end if;
+            end if;
+        end if;
+    end process;
 
 end a1;
