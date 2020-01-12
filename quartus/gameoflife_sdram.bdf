@@ -929,17 +929,17 @@ applicable agreement for further details.
 	)
 	(parameter
 		"gol_file1"
-		"\"d:/Vitaly/programmation/fpga/gameoflife_sdram/converter/gol1_0.mif\""
+		"\"../Samples/grid/filler_0.mif\""
 		""
 	)
 	(parameter
 		"gol_file2"
-		"\"d:/Vitaly/programmation/fpga/gameoflife_sdram/converter/gol1_1.mif\""
+		"\"../Samples/grid/filler_1.mif\""
 		""
 	)
 	(parameter
 		"gol_file3"
-		"\"d:/Vitaly/programmation/fpga/gameoflife_sdram/converter/gol1_2.mif\""
+		"\"../Samples/grid/filler_2.mif\""
 		""
 	)
 	(parameter
