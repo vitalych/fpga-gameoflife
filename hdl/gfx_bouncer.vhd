@@ -1,15 +1,15 @@
 -- Copyright (c) 2007-2020 Vitaly Chipounov
--- 
+--
 -- Permission is hereby granted, free of charge, to any person obtaining a copy
 -- of this software and associated documentation files (the "Software"), to deal
 -- in the Software without restriction, including without limitation the rights
 -- to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
 -- copies of the Software, and to permit persons to whom the Software is
 -- furnished to do so, subject to the following conditions:
--- 
+--
 -- The above copyright notice and this permission notice shall be included in all
 -- copies or substantial portions of the Software.
--- 
+--
 -- THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
 -- IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
 -- FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
@@ -49,7 +49,7 @@ entity gfx_bouncer is
         reset : in std_logic;
 
         --The current row/column being displayed by the vga
-        --controller. It expects to get the cooresponding 
+        --controller. It expects to get the cooresponding
         --color on the next cycle.
         row : in unsigned(log2(screen_height) - 1 downto 0);
         col : in unsigned(log2(screen_width) - 1 downto 0);
@@ -210,7 +210,7 @@ begin
         (others => '0');
 
     --The bkgr_visible has to be delayed by one cycle
-    --because of the vga controller specs.	
+    --because of the vga controller specs.
     process (clk, reset, bkgr_visible_i)
     begin
         if (reset = '1') then

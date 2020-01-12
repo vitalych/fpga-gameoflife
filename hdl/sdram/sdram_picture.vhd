@@ -1,15 +1,15 @@
 -- Copyright (c) 2007-2020 Vitaly Chipounov
--- 
+--
 -- Permission is hereby granted, free of charge, to any person obtaining a copy
 -- of this software and associated documentation files (the "Software"), to deal
 -- in the Software without restriction, including without limitation the rights
 -- to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
 -- copies of the Software, and to permit persons to whom the Software is
 -- furnished to do so, subject to the following conditions:
--- 
+--
 -- The above copyright notice and this permission notice shall be included in all
 -- copies or substantial portions of the Software.
--- 
+--
 -- THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
 -- IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
 -- FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
@@ -53,10 +53,10 @@ use work.uart_lib.all;
 --If the baud rate is to rate and the clock speed is too low
 --this may result in data loss.
 --The maximum delay may be calculated as follows:
---clock_speed/baud_rate * bits_per_word. For a clock operating at 33Mhz, 
+--clock_speed/baud_rate * bits_per_word. For a clock operating at 33Mhz,
 --115200 baud rate, 11 data bits, copy operation must not last more than 3151
---clock cycles. If the vga line width is 800 (640 pixel width), 
---the delay will be of at most 640+80+sdram_delay. 
+--clock cycles. If the vga line width is 800 (640 pixel width),
+--the delay will be of at most 640+80+sdram_delay.
 
 entity sdram_picture is
     generic(
@@ -101,21 +101,21 @@ entity sdram_picture is
 end sdram_picture;
 
 architecture a1 of sdram_picture is
-    type stest_state is (cs_wait_sdram, write1, write1a, write2, 
+    type stest_state is (cs_wait_sdram, write1, write1a, write2,
     cs_read1, cs_read2, cs_read3,
     cs_wait_vretrace, cs_wait_hretrace,	cs_wait_hretrace_a,
     cs_uart1, cs_uart2, cs_uart2a, cs_uart3, cs_check_row);
 
     signal current_state, next_state: stest_state;
-    
+
     signal address: unsigned(22 downto 0);
     signal data_wr, data_rd: unsigned(31 downto 0);
     signal sdram_ready: boolean;
     signal data_ready, write_ready, op_begin, do_write,bank_activated: boolean;
-    
+
     constant rowpo2: natural := log2(pixel_height);
     constant colpo2: natural := log2(pixel_width);
-    
+
     constant  read_ram_addrwidth: natural := log2(pixel_width/8);
 
     signal read_ram_address: unsigned(read_ram_addrwidth-1 downto 0);
@@ -141,13 +141,13 @@ architecture a1 of sdram_picture is
     signal recv2sdram_storing: boolean;
     signal recv2sdram_set_data_avl: boolean;
     signal recv2sdram_reset_data_avl: boolean;
-    
+
     signal uart2recv_ram_address: unsigned(read_ram_addrwidth-1 downto 0);
     signal uart2recv_addr_incr: boolean;
-    signal uart2recv_ram_we: std_logic;	
+    signal uart2recv_ram_we: std_logic;
     signal uart2recv_ram_input: unsigned(31 downto 0);
 
-    
+
     --signal vga_row: unsigned(rowpo2-1 downto 0);
     --signal vga_col: unsigned(colpo2-1 downto 0);
     --signal vga_color: unsigned(vga_color_depth_bits-1 downto 0);
@@ -157,7 +157,7 @@ architecture a1 of sdram_picture is
     signal sdram_col: unsigned(colpo2-4 downto 0);
     signal sdram_col_incr, sdram_row_incr: boolean;
     signal sdram_col_reset, sdram_row_reset: boolean;
-    
+
     signal uart_timeout: unsigned(log2(clock_speed)-1 downto 0);
     signal uart_address: unsigned(read_ram_addrwidth-1 downto 0);
     signal uart_row, uart_sdram_row: unsigned(rowpo2-1 downto 0);
@@ -169,7 +169,7 @@ architecture a1 of sdram_picture is
     signal uart_byte2write: unsigned(1 downto 0);
     signal uart_byte2write_en: boolean;
     signal uart_store2sdram, uart_store2sdram_finished: boolean;
-    
+
     signal uart_from_sdram_wordwritten: boolean;
     signal uart_from_sdram_addrincr:boolean;
     type uart_state is (us_init, us_recv,  us_store, us_store2ram,
@@ -190,7 +190,7 @@ begin
             vga_vretrace <= vga_vretrace_i;
             vga_hretrace <= vga_hretrace_i;
         end if;
-    end process;	
+    end process;
 
 
     sd1: sdram generic map(
@@ -205,7 +205,7 @@ begin
     )
     port map(
         clk=>clk, reset=>reset,
-        cke=>sdram_cke, cs=>sdram_cs, ras_n=>sdram_ras_n, 
+        cke=>sdram_cke, cs=>sdram_cs, ras_n=>sdram_ras_n,
         cas_n=>sdram_cas_n, we_n=>sdram_we_n,
         sdram_address => sdram_address,
         bank_select=>sdram_bank_select,
@@ -220,11 +220,11 @@ begin
         bank_activated => bank_activated,
         data_write => data_wr,
         do_write => do_write,
-        
+
         controller_ready => sdram_ready
     );
 
-    
+
 
     --mapping for RAM controller -------------------------------------
     ram_read: ram2port2clock generic map(
@@ -243,7 +243,7 @@ begin
         unsigned(q_a)		 => read_ram_output,
         q_b		 => open
     );
-    
+
     --Extracts the right nibble for the color.
     --Note the order of the nibbles and the fact
     --that the color will be displayed on the
@@ -257,15 +257,15 @@ begin
         else read_ram_output(27 downto 24) when vga_col(2 downto 0) = 0
         else read_ram_output(31 downto 28) when vga_col(2 downto 0) = 7
         else (others=>'0');
-    
+
     process(sdram_col, vga_col, sdram_row, recv2sdram_storing, uart_sdram_row)
     begin
         read_ram_address <= (others=>'0');
         read_ram_address_vga <= (others => '0');
-        
+
         read_ram_address_vga(colpo2-4 downto 0) <= vga_col(colpo2-1 downto 3);
         read_ram_address(colpo2-4 downto 0) <= sdram_col;
-        
+
         address <= (others=>'0');
 
         --generate the sdram read/write address
@@ -277,9 +277,9 @@ begin
             address(col_width+uart_row'length-1 downto col_width) <= uart_sdram_row;
         end if;
     end process;
-    
 
-    
+
+
     --increment row and column.
     --It is used to fetch the right pixel from the sdram
     process(clk, reset, address)
@@ -298,12 +298,12 @@ begin
             if(sdram_row_reset) then
                     sdram_row <= (others=>'0');
             elsif (sdram_row_incr) then
-                    if (sdram_row = pixel_height-1) 
+                    if (sdram_row = pixel_height-1)
                         then sdram_row <= (others=>'0');
                         else sdram_row <= sdram_row + 1;
                     end if;
             end if;
-            
+
             --Uart buffer address (uart=>SDRAM)
             if (recv2sdram_addr_incr) then
                 if (recv2sdram_ram_address = pixel_width/8-1)
@@ -324,13 +324,13 @@ begin
         if (recv2sdram_storing) then
             data_wr <= recv2sdram_ram_output;
         else
-            if (address(0)='0') 
+            if (address(0)='0')
                 then data_wr <= x"44444444";
                 else data_wr <= x"00000000";
-            end if;		
+            end if;
         end if;
     end process;
-    
+
 
     process(current_state, sdram_ready, sdram_col, sdram_row,
     data_ready, vga_vretrace, vga_hretrace, write_ready,
@@ -347,20 +347,20 @@ begin
         sdram_col_reset <= false;
 
         read_ram_we <= '0';
-        
+
         recv2sdram_addr_incr <= false;
         recv2sdram_reset_data_avl <= false;
         recv2sdram_storing <= false;
-        
+
         case current_state is
-        
+
             --Wait for the SDRAM to complete its initialization
             when cs_wait_sdram=>
                 if (sdram_ready) then
                     next_state <= write1a;
                 end if;
-                
-            ------------------------------------	
+
+            ------------------------------------
             --reset the content of the sdram
             when write1a =>
                 op_begin <= true;
@@ -368,13 +368,13 @@ begin
                 if (write_ready) then
                     next_state <= write2;
                     sdram_col_incr <= true;
-                end if;	
-                    
+                end if;
+
             when write2 =>
                 op_begin <= true;
                 do_write <= true;
                 sdram_col_incr <= true;
-                    
+
                 if (sdram_col=pixel_width/8-1) then
                     next_state <= write1;
                     do_write <= false;
@@ -389,16 +389,16 @@ begin
                 if (sdram_row=pixel_height-1) then
                     next_state <= cs_wait_vretrace;
                 end if;
-                    
-            
 
-            ------------------------------------	
+
+
+            ------------------------------------
             --Wait for the vertical retrace before
             --we load the first line
             when cs_wait_vretrace =>
                 sdram_col_reset <= true;
                 sdram_row_reset <= true;
-                
+
                 if (vga_vretrace='1') then
                     next_state <= cs_read1;
                 end if;
@@ -414,7 +414,7 @@ begin
                     sdram_col_incr <= true;
                     read_ram_we <= '1';
                 end if;
-                    
+
             --Burst read the rest of the line
             --Warning: The loops assumes that the
             --sdram controller does not interrupt bursts
@@ -424,12 +424,12 @@ begin
                 read_ram_selectvga <= false;
                 sdram_col_incr <= true;
                 read_ram_we <= '1';
-                op_begin <= true;			
+                op_begin <= true;
 
                 if (sdram_col=pixel_width/8-1) then
                     next_state <= cs_read3;
                 end if;
-            
+
             --Now copy downloaded data if necessary.
             --Else go to check row
             when cs_read3=>
@@ -438,24 +438,24 @@ begin
                 next_state <= cs_check_row;
                 if (recv2sdram_data_avl) then
                      next_state <= cs_uart1;
-                end if;					
-            
-            ------------------------------------	
+                end if;
+
+            ------------------------------------
             --Store the content of the UART buffer
             --in the SDRAM
             when cs_uart1 =>
                 op_begin <= true;
                 do_write <= true;
                 recv2sdram_storing <= true;
-                
+
                 if (write_ready or bank_activated) then
                     recv2sdram_addr_incr <= true;
                 end if;
-                            
+
                 if (write_ready) then
                     next_state <= cs_uart2;
-                end if;	
-                
+                end if;
+
             --!!!Warning!!! The loop assumes that the
             --sdram controller does not interrupt bursts
             --with auto refreshes!
@@ -465,30 +465,30 @@ begin
                 do_write <= true;
                 recv2sdram_addr_incr <= true;
                 recv2sdram_storing <= true;
-                
-                if (recv2sdram_ram_address = pixel_width/8-1) then			
+
+                if (recv2sdram_ram_address = pixel_width/8-1) then
                     next_state <= cs_uart2a;
                 end if;
-                
+
             when cs_uart2a =>
                 recv2sdram_storing <= true;
                 op_begin <= true;
                 do_write <= true;
                 next_state <= cs_uart3;
-            
+
             when cs_uart3 =>
                 next_state <= cs_check_row;
                 recv2sdram_reset_data_avl <= true;
-                
-            -------------------------			
+
+            -------------------------
             --if we reached the first row again,
             --go to wait vretrace before loading it
             when cs_check_row =>
-                if (sdram_row = 0) 
+                if (sdram_row = 0)
                     then next_state <= cs_wait_vretrace;
                     else next_state <= cs_wait_hretrace_a;
                 end if;
-            
+
             --wait hretrace to draw the line.
             --if it is already the last, line,
             --wait for the vretrace to load the
@@ -497,7 +497,7 @@ begin
                 if (vga_hretrace='0') then
                     next_state <= cs_wait_hretrace;
                 end if;
-            
+
             when cs_wait_hretrace =>
                 if (vga_vretrace='1' and recv2sdram_data_avl) then
                     next_state <= cs_uart1;
@@ -517,8 +517,8 @@ begin
             current_state <= next_state;
         end if;
     end process;
-    
-    
+
+
     --mapping for RAM controller, download a line from the serial port
     ram_write: ram2port generic map(
         data_width => 32,
@@ -526,7 +526,7 @@ begin
         init_file => ""
     )
     port map(
-        clk=>clk, 
+        clk=>clk,
         address1 => recv2sdram_ram_address,
         read1_data => recv2sdram_ram_output,
         write1_en => '0',
@@ -546,13 +546,13 @@ begin
     )
     port map(
         clk => clk,
-    reset => reset, 
+    reset => reset,
     rx => uart_rx,
     ready => uart_ready,
     data => uart_data,
     parity_ok => uart_parity_ok
     );
-    
+
     --UART process
     --Timeout counter, resets the write address
     --if nothing was received for a significant amount
@@ -570,17 +570,17 @@ begin
             uart_sdram_row <= (others =>'0');
         elsif(clk'event and clk='1') then
             --Handles timeout
-            if (uart_timeout_reset) 
+            if (uart_timeout_reset)
                 then uart_timeout <= (others=>'1');
                 else uart_timeout <= uart_timeout - 1;
             end if;
-            
+
             --Saves the row so that sdram can use it
             --independently from the uart receiver.
             if (uart_save_row) then
                 uart_sdram_row <= uart_row;
             end if;
-            
+
             --If there is a timeout, zero out everything
             if (uart_timeout = 0) then
                     uart2recv_ram_address <= (others =>'0');
@@ -593,7 +593,7 @@ begin
                         else uart2recv_ram_address <= uart2recv_ram_address+1;
                     end if;
                 end if;
-                
+
                 --The row being currently downloaded
                 if (uart_row_incr) then
                     if (uart_row = pixel_height-1)
@@ -601,8 +601,8 @@ begin
                         else uart_row <= uart_row+1;
                     end if;
                 end if;
-            end if;			
-            
+            end if;
+
         end if;
     end process;
 
@@ -623,14 +623,14 @@ begin
                 uart_bytes <= uart_data & uart_bytes(31 downto 8);
                 uart_byte2write <= uart_byte2write + 1;
             end if;
-            
+
             if (uart_byte2write = 3 and uart_byte2write_en) then
                 uart_byte2write <= (others=>'0');
             end if;
-        
+
         end if;
     end process;
-    
+
     --coordination between sdram process and uart process
     process(clk, reset, recv2sdram_set_data_avl, recv2sdram_reset_data_avl)
     begin
@@ -640,13 +640,13 @@ begin
             if (recv2sdram_set_data_avl) then
                 recv2sdram_data_avl <= true;
             end if;
-            
+
             if (recv2sdram_reset_data_avl) then
                 recv2sdram_data_avl <= false;
             end if;
         end if;
     end process;
-    
+
     ------------------------------------
     --UART state machine, control download process
     process(uart_cs, uart_ready, uart_byte2write,
@@ -654,18 +654,18 @@ begin
     update_enable)
     begin
         uart_ns <= uart_cs;
-        
+
         uart_timeout_reset <= true;
 
 
         uart_byte2write_en <= false;
         uart_row_incr <= false;
         uart_save_row <= false;
-        
+
         recv2sdram_set_data_avl <= false;
         uart2recv_addr_incr <= false;
         uart2recv_ram_we <= '0';
-        
+
         case uart_cs is
             --Wait for the UART to be ready
             when us_init=>
@@ -673,20 +673,20 @@ begin
                 if (uart_timeout = 0) then
                     uart_ns <= us_recv;
                 end if;
-            
+
             when us_recv =>
                 uart_timeout_reset <= false;
-                
+
                 if (uart_ready='1' and update_enable='1') then
                     uart_ns <= us_store;
                 end if;
-            
+
             --Store the received byte
             when us_store =>
                 uart_timeout_reset <= false;
                 uart_byte2write_en <= true;
-                
-                if (uart_byte2write = 3) 
+
+                if (uart_byte2write = 3)
                     then uart_ns <= us_store2ram;
                     else uart_ns <= us_recv;
                 end if;
@@ -697,22 +697,22 @@ begin
                 uart2recv_ram_we <= '1';
                 uart2recv_addr_incr <= true;
 
-                if (uart2recv_ram_address = pixel_width/8-1) 
+                if (uart2recv_ram_address = pixel_width/8-1)
                     then uart_ns <= us_uart_next_row;
                     else uart_ns <= us_recv;
                 end if;
-            
+
             when us_uart_next_row =>
                 recv2sdram_set_data_avl <= true;
                 uart_row_incr <= true;
                 uart_save_row <= true;
                 uart_ns <= us_recv;
-                
+
             when others=>null;
         end case;
 
     end process;
-    
+
     process(clk, reset, uart_ns)
     begin
         if (reset='1') then

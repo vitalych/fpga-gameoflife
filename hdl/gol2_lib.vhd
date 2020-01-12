@@ -1,15 +1,15 @@
 -- Copyright (c) 2007-2020 Vitaly Chipounov
--- 
+--
 -- Permission is hereby granted, free of charge, to any person obtaining a copy
 -- of this software and associated documentation files (the "Software"), to deal
 -- in the Software without restriction, including without limitation the rights
 -- to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
 -- copies of the Software, and to permit persons to whom the Software is
 -- furnished to do so, subject to the following conditions:
--- 
+--
 -- The above copyright notice and this permission notice shall be included in all
 -- copies or substantial portions of the Software.
--- 
+--
 -- THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
 -- IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
 -- FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
@@ -172,7 +172,7 @@ package gol2_lib is
             clk : in std_logic;
             ram_select : in std_logic;
 
-            -- the ram being read (original grid) 
+            -- the ram being read (original grid)
             -- The write signals are only used by the grid download module
             read1_address : in unsigned(block_address_width - 1 downto 0);
             read1_data : out std_logic;
